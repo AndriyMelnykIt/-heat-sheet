@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const App = () => {
   return (
     <div>
-      App
+      <Link to={'/'}>Home</Link>
+      <Link to={'/test'}>Test page</Link>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
