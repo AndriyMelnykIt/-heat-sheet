@@ -1,12 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
+
   return (
-    <div>
-      <Link to={'/'}>Home</Link>
-      <Link to={'/test'}>Test page</Link>
-    </div>
+    <>
+    <main>
+      <AppRoutes />
+    </main>
+    {/* <Footer /> */}
+  </>
   );
 };
 
