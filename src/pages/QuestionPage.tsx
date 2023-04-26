@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import { useParams } from 'react-router';
 
-import Header from '../components/Header';
 import useGetObjectById from '../hooks/useGetObjectById';
 import { modules } from '../../mock_db';
+
+import Header from '../components/Header/Header';
 
 const QuestionPage: FC = () => {
   const param = useParams();
