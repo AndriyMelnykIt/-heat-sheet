@@ -1,20 +1,12 @@
 import React from 'react';
-import Module from '../components/Module';
+import ModuleAccordion from '../components/ModuleAccordion.tsx';
+
+import { modules } from '../../mock_db.ts';
 
 const HomePage = () => {
-  const genData = () => {
-    let acc = [];
-    for (let i = 0; i < 20; i++) {
-      acc.push(<Module number={i} id={i} />);
-    }
-    return acc;
-  };
-
   return (
     <div>
-      {genData().map((item) => (
-        <>{item}</>
-      ))}
+      {modules.map(module => <ModuleAccordion key={module.id} module={module}/>)}
     </div>
   );
 };
