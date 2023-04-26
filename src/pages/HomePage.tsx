@@ -1,5 +1,5 @@
 import React from 'react';
-import ModuleAccordion from '../components/ModuleAccordion.tsx';
+import ModuleAccordion from '../components/ModuleAccordion/ModuleAccordion.js';
 
 import { modules } from '../../mock_db.ts';
 

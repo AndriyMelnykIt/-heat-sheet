@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useParams } from 'react-router';
 
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 
 const QuestionPage: FC = () => {
   const param = useParams();
