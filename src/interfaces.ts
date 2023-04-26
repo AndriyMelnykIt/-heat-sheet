@@ -1,7 +1,13 @@
+export interface Topics {
+  code: boolean,
+  label: string,
+  description: string
+}
+
 export interface Question {
   id: string;
   question: string;
-  description: string;
+  descriptions: Topics[];
 }
 
 export interface Module {

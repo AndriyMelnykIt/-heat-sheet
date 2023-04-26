@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import QuestionPage from '../pages/QuestionPage';
 import HomePage from '../pages/HomePage';
 
-const AppRoutes = () => {
+const AppRoutes = (): JSX.Element => {
   return (
     <Routes>
       <Route path='/' element={<HomePage />}/>
