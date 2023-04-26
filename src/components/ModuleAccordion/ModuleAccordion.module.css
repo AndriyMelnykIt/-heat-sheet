@@ -1,0 +1,28 @@
+.question {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.question__list {
+    text-decoration: none;
+    color: var(--color-black);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.question__tile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 200px;
+    transition: transform 0.3s;
+}
+
+.question__tile a:hover {
+    transform: scale(1.05);
+    background: #f3ecec;
+}
