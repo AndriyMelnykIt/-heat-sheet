@@ -13,7 +13,7 @@ interface Props {
   module: Module;
 }
 
-const ModuleAccordion: FC<Props> = ({ module }) => {
+const ModuleAccordion: FC<Props> = ({ module }): JSX.Element => {
 
   return (
     <Accordion>

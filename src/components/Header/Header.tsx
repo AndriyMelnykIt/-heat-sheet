@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from './Header.module.css'
 
-const Header = () => {
+const Header = (): JSX.Element => {
   const navigate = useNavigate();
 
   return <Button className={styles.btn} onClick={() => navigate('/')}>Home</Button>;

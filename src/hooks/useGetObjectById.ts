@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Module, Question } from '../interfaces';
 
-const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-  const [result, setResult] = useState<Module | Question | null>(null);
+const useGetObjectById = ( array: (Question | Module)[], id : string): Question | null => {
+  const [result, setResult] = useState<Question | null>(null);
 
   const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
       for (let i = 0; i < array.length; i++) {
@@ -12,7 +12,7 @@ const useGetObjectById = ( array: (Question | Module)[], id : string): Module | 
           getObjectById(moduleObj.questions, idForSearch);
         }
         if (obj.id === idForSearch) {
-          setResult(obj as Module | Question);
+          setResult(obj as Question);
           break;
         }
       }
