@@ -5,13 +5,14 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link } from 'react-router-dom';
+import { Module } from '../interfaces';
 
 interface Props {
-  number: number;
-  id: number;
+  module: Module;
 }
 
-const Module: FC<Props> = ({ number, id }) => {
+const ModuleAccordion: FC<Props> = ({ module }) => {
+
   return (
     <Accordion>
       <AccordionSummary
@@ -19,15 +20,16 @@ const Module: FC<Props> = ({ number, id }) => {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography>Accordion {number}</Typography>
+        <Typography>{module.name}</Typography>
       </AccordionSummary>
-      <AccordionDetails>
-        {/* TODO: Add list of questions */}
-        <Typography>list of questions</Typography>
-        <Link to={`/question/${id}`}>question</Link>
+      <AccordionDetails  style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        {module.questions.map(question => <Link key={question.id} to={`/question/${question.id}`}>
+            {question.question}
+          </Link>
+        )}
       </AccordionDetails>
     </Accordion>
   );
 };
 
-export default Module;
+export default ModuleAccordion;

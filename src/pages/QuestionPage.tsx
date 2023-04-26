@@ -8,7 +8,7 @@ const QuestionPage: FC = () => {
 
   return <>
     <Header />
-    <div>number: {param.id}</div>
+    <div>desc: {param.id}</div>
   </>
 };
 
