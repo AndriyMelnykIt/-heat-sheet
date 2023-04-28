@@ -48,7 +48,7 @@ const CustomSyntaxHighlighter: FC<CustomSyntaxHighlighterProps> = ({
           </Button>
         )}
       </div>
-      <SyntaxHighlighter language="javascript" style={docco}>
+      <SyntaxHighlighter language="javascript" style={docco.hljsVariable}>
         {codeString}
       </SyntaxHighlighter>
     </div>
