@@ -7,6 +7,19 @@ import { modules } from '../../mock_db';
 
 import Header from '../components/Header/Header';
 
+import { styled } from '@mui/system';
+
+const BasicLabel = styled('div')`
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+`
+
+const Description = styled('div')`
+  font-size: 16px;
+  line-height: 1.5;
+`
+
 const QuestionPage: FC = (): JSX.Element => {
   const param = useParams();
   const item = useGetObjectById(modules, param.id as string);
@@ -28,8 +41,8 @@ const QuestionPage: FC = (): JSX.Element => {
 
             return (
               <div key={el.label}>
-                <div>{el.label}</div>
-                <div>{el.description}</div>
+                <BasicLabel>{el.label}</BasicLabel>
+                <Description>{el.description}</Description>
               </div>
             );
           })}
