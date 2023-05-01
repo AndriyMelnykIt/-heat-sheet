@@ -1,0 +1,13 @@
+.highlighterHeaderWrapper {
+  background: #000000bf;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-radius: 15px 15px 0 0;
+  align-items: center;
+}
+
+.highlighterCode {
+  margin: 0 0 20px;
+}

@@ -33,7 +33,7 @@ const QuestionPage: FC = (): JSX.Element => {
             if (el.code) {
               return (
                 <div key={el.label}>
-                  <div>{el.label}</div>
+                  <BasicLabel>{el.label}</BasicLabel>
                   <CustomSyntaxHighlighter codeString={el.description} />
                 </div>
               );

@@ -7,6 +7,8 @@ import docco from 'react-syntax-highlighter/dist/esm/styles/hljs/docco';
 import { Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 
+import styles from './CustomSyntaxHighlighter.module.css';
+
 interface CustomSyntaxHighlighterProps {
   codeString: string;
 }
@@ -17,18 +19,11 @@ const CustomSyntaxHighlighter: FC<CustomSyntaxHighlighterProps> = ({
   const [copy, setCopy] = useState<Boolean>(false);
 
   return (
-    <div>
-      <div
-        style={{
-          background: 'grey',
-          color: 'white',
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
+    <>
+      <Box className={styles.highlighterHeaderWrapper}>
         <p>Example code</p>
         {copy ? (
-          <Box>
+          <Box sx={{ color: '#fff', display: 'flex', flexDirection: 'row' }}>
             <DoneAllIcon />
             <Typography>Copied!</Typography>
           </Box>
@@ -42,16 +37,17 @@ const CustomSyntaxHighlighter: FC<CustomSyntaxHighlighterProps> = ({
                 setCopy(false);
               }, 3000);
             }}
+            sx={{ color: '#fff', display: 'flex', flexDirection: 'row' }}
           >
             <ContentCopyIcon />
-            Copy code
+            <Typography>Copy code</Typography>
           </Button>
         )}
-      </div>
-      <SyntaxHighlighter language="javascript" style={docco.hljsVariable}>
+      </Box>
+      <SyntaxHighlighter language="javascript" styles={docco.hljsVariable} className={styles.highlighterCode}>
         {codeString}
       </SyntaxHighlighter>
-    </div>
+    </>
   );
 };
 
