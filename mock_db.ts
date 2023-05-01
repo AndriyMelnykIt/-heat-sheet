@@ -504,166 +504,753 @@ Compositing - це процес складання відображення ст
   },
   {
     id: 2,
-    name: 'Git',
+    name: 'Web API',
     questions: [
       {
         id: '2_1',
-        question: 'question 1',
+        question: 'Що таке HTTP?',
         descriptions: [
           {
             code: false,
-            label: 'What is DNS?',
-            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+            label: 'Що таке HTTP?',
+            description: `HTTP означає "Протокол передачі гіпертексту" (англ. "Hypertext Transfer Protocol"). Це стандартний протокол, який використовується для передачі даних в Інтернеті. В основному він використовується для передачі веб-сторінок з веб-сервера на веб-браузер. HTTP використовується для запитів на отримання ресурсів (таких як HTML-сторінки, зображення, відео) з сервера та для передачі даних від користувача до сервера (наприклад, при заповненні форми на веб-сторінці).`,
           },
           {
             code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
-          },
-          {
-            code: true,
-            label: 'Code',
-            description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
-            `,
+            label: '',
+            description: `HTTP є протоколом передачі даних в Інтернеті, що базується на клієнт-серверній архітектурі. Клієнт (наприклад, веб-браузер) надсилає запит на сервер, який потім відповідає на запит, передаючи необхідну інформацію клієнту.
+              HTTP використовується для передачі різних типів даних, таких як HTML-сторінки, зображення, відео, аудіо, CSS-стилі, JavaScript-скрипти, тощо. Для передачі даних використовуються різні методи, зокрема GET, POST, PUT, DELETE, PATCH, які визначають тип запиту та дії, які необхідно виконати на сервері.
+              HTTP має певну структуру запиту та відповіді, яка включає заголовки (headers) та тіло (body) повідомлення. У заголовках вказуються метадані про запит або відповідь, такі як тип даних, розмір, кодування тощо. Тіло повідомлення містить основну інформацію, яка передається в запиті або відповіді.
+              У заголовках запиту також можуть бути вказані різні параметри, наприклад, заголовок "User-Agent" містить інформацію про веб-браузер або інший клієнтський програмний продукт, який здійснює запит. Це дозволяє серверу адаптувати відповідь до конкретного клієнта.
+              Заголовки також можуть включати інформацію про авторизацію, кешування, кодування, мову тощо. Для забезпечення безпеки передачі даних можуть використовуватися різні методи шифрування, такі як TLS/SSL.`,
           },
         ],
       },
       {
         id: '2_2',
-        question: 'question 2',
+        question: 'З чого будується HTTP-запит?',
         descriptions: [
           {
             code: false,
-            label: 'What is DNS?',
-            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+            label: '',
+            description: `HTTP-запит будується з трьох основних частин: рядка запиту (request line), заголовків запиту (request headers) та тіла запиту (request body).`,
           },
           {
             code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+            label: '',
+            description: `1. Рядок запиту містить метод запиту, шлях до ресурсу та версію протоколу, наприклад:`,
           },
           {
             code: true,
-            label: 'Code',
+            label: '',
+            description: `GET /index.html HTTP/1.1`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі метод запиту - GET, шлях до ресурсу - /index.html, а версія протоколу - HTTP/1.1.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `2. Заголовки запиту містять додаткову інформацію про запит, таку як тип даних, кодування, мову, кешування, авторизацію тощо. Заголовки вказуються після рядка запиту та розділяються переносом рядка. Приклад заголовків запиту:`,
+          },
+          {
+            code: true,
+            label: '',
             description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
+            Host: www.example.com
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+            Accept-Language: en-US,en;q=0.9
             `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `3. Тіло запиту містить додаткові дані, які надсилаються разом з запитом. Наприклад, у випадку відправлення форми на веб-сторінці, тіло запиту міститиме дані, які були введені користувачем. У деяких випадках запит може не містити тіла, тоді ця частина буде відсутня. Якщо тіло запиту присутнє, то воно повинно розділюватись від заголовків порожнім рядком.`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+              POST /submit-form.php HTTP/1.1
+              Host: www.example.com
+              Content-Type: application/x-www-form-urlencoded
+              Content-Length: 23
+              
+              username=johndoe&password=12345
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі метод запиту - POST, шлях до ресурсу - /submit-form.php, версія протоколу - HTTP/1.1. Заголовки запиту вказують тип даних (application/x-www-form-urlencoded) та розмір тіла запиту (23 байти). Тіло запиту містить дані, введені користувачем на формі (username=johndoe&password=12345).`,
           },
         ],
       },
       {
         id: '2_3',
-        question: 'question 3',
+        question: 'Які методи може мати HTTP-запит?',
         descriptions: [
           {
             code: false,
-            label: 'What is DNS?',
-            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+            label: 'Які методи може мати HTTP-запит?',
+            description: `HTTP-протокол має кілька методів запиту, які використовуються для взаємодії з сервером. Основні методи HTTP-запитів:`,
           },
           {
             code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+            label: '1. GET - запит на отримання ресурсу за вказаною адресою.',
+            description: `Метод GET використовується для запиту ресурсу з сервера. Він не змінює стану сервера і повертає лише дані, які були запитані. Оскільки метод GET не змінює стану сервера, він може бути безпечно кешований.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У fetch(), ви можете використовувати метод GET, передавши його як параметр у другому об'єкті параметрів запиту. Як правило, метод GET не має тіла запиту, оскільки дані не надсилаються на сервер. Ось приклад використання методу GET:`,
           },
           {
             code: true,
-            label: 'Code',
+            label: '',
             description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
+              fetch('https://example.com/api/resource?id=12345', {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              })
+              .then(response => console.log(response))
+              .catch(error => console.error(error));            
             `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми використовуємо метод GET для запиту ресурсу з сервера з ідентифікатором "12345". За допомогою параметрів запиту, ми передаємо ідентифікатор у URL-адресі. Заголовок "Content-Type" встановлений на "application/json", але це не є обов'язковим для методу GET, оскільки ми не надсилаємо дані на сервер.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Після виконання запиту сервер повинен повернути відповідь з даними запитаного ресурсу. Інформацію про ресурс можна отримати з об'єкту Response, який повертається з fetch().`,
+          },
+          {
+            code: false,
+            label: '2. POST - відправлення даних на сервер для обробки.',
+            description: `Метод POST використовується для створення нового ресурсу на сервері або відправки даних на сервер для обробки. У відміну від методу PUT, який оновлює існуючий ресурс, метод POST завжди створює новий ресурс на сервері.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У fetch(), ви можете використовувати метод POST, передавши його як параметр у другому об'єкті параметрів запиту. Дані, які необхідно відправити на сервер, повинні бути передані у тілі запиту. Ось приклад використання методу POST:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+              fetch('https://example.com/api/resource', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  name: 'New Resource Name',
+                  description: 'New Resource Description'
+                })
+              })
+              .then(response => console.log(response))
+              .catch(error => console.error(error));
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми використовуємо метод POST для створення нового ресурсу на сервері. Також ми встановлюємо заголовок "Content-Type" на "application/json", щоб вказати, що дані, які ми надсилаємо, є об'єктом JSON. Тіло запиту містить об'єкт з даними нового ресурсу.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Після того, як сервер успішно створить новий ресурс, він повинен повернути відповідь з інформацією про створений ресурс, наприклад, з його ідентифікатором або посиланням на ресурс. Відповідь може бути отримана з об'єкту Response, який повертається з fetch().`,
+          },
+          {
+            code: false,
+            label: '3. PUT - оновлення ресурсу на сервері за вказаною адресою.',
+            description: `Метод PUT використовується для заміни або оновлення ресурсу на сервері. Він відрізняється від методу POST тим, що він не тільки додає новий ресурс, але також оновлює існуючий ресурс на сервері. Цей метод може бути корисним, коли потрібно змінити деякі дані, які вже є на сервері, але які було надіслано раніше.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У fetch(), ви можете використати метод PUT, передавши його як параметр у другому об'єкті параметрів запиту. Також потрібно передати дані, які потрібно замінити на сервері, у тілі запиту. Ось приклад використання методу PUT:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+              fetch('https://example.com/api/resource/1', {
+                method: 'PUT',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  name: 'New Resource Name',
+                  description: 'New Resource Description'
+                })
+              })
+              .then(response => console.log(response))
+              .catch(error => console.error(error));
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми використовуємо метод PUT для заміни даних ресурсу з ідентифікатором "1". Також ми встановлюємо заголовок "Content-Type" на "application/json", щоб вказати, що дані, які ми надсилаємо, є об'єктом JSON. Тіло запиту містить об'єкт з оновленими даними для ресурсу.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Як і в інших методах, сервер повинен повернути відповідь на запит методу PUT, щоб підтвердити, що дані були збережені на сервері.`,
+          },
+          {
+            code: false,
+            label: '4. DELETE - видалення ресурсу на сервері за вказаною адресою.',
+            description: `Mетод DELETE використовується для видалення ресурсу на сервері. Використовуйте метод fetch() з параметром method: 'DELETE', щоб виконати DELETE-запит:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+              fetch('https://example.com/posts/1', {
+                method: 'DELETE',
+              })
+              .then(response => {
+                console.log('Resource deleted successfully');
+              })
+              .catch(error => console.error(error));                    
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми використовуємо метод DELETE для видалення ресурсу на сервері, за адресою https://example.com/posts/1. У відповідь на запит сервер може повернути статусний код 204 No Content, що означає успішне видалення ресурсу. В нашому випадку ми виводимо повідомлення про успішне видалення ресурсу в консоль. Якщо виникне помилка, ми виводимо повідомлення про помилку в консоль, використовуючи метод console.error().`,
+          },
+          {
+            code: false,
+            label: '5. HEAD - запит на отримання заголовків відповіді, але без тіла відповіді.',
+            description: `Метод HEAD використовується для отримання заголовків відповіді на запит без тіла відповіді. Він корисний, коли ви хочете отримати лише інформацію про ресурс, таку як тип MIME, без отримання всього вмісту ресурсу. Використовуйте метод fetch() з параметром method: 'HEAD', щоб виконати HEAD-запит:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+              fetch('https://example.com/posts/1', {
+                method: 'HEAD',
+              })
+              .then(response => {
+                console.log(response.headers.get('Content-Type'));
+              })
+              .catch(error => console.error(error));
+                               
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми відправляємо HEAD-запит на URL https://example.com/posts/1. У відповідь на запит сервер поверне лише заголовки відповіді, але не тіло відповіді. Ми використовуємо метод headers.get('Content-Type') для отримання типу MIME відповіді і виводимо його у консолі. У випадку помилки ми виводимо повідомлення про помилку в консолі, використовуючи метод console.error().`,
+          },
+          {
+            code: false,
+            label: '6. OPTIONS - запит на отримання інформації про можливості сервера для обробки запитів.',
+            description: `Метод OPTIONS використовується для отримання інформації про можливі методи HTTP, які підтримуються для конкретного ресурсу на сервері. Використовуйте метод fetch() з параметром method: 'OPTIONS', щоб виконати OPTIONS-запит:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+              fetch('https://example.com/posts', {
+                method: 'OPTIONS',
+              })
+              .then(response => {
+                console.log(response.headers.get('Allow'));
+              })
+              .catch(error => console.error(error));
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми відправляємо OPTIONS-запит на URL https://example.com/posts. У відповідь на запит сервер поверне заголовок Allow, який містить перелік методів HTTP, що підтримуються для даного ресурсу на сервері. Ми використовуємо метод headers.get('Allow') для отримання переліку методів і виводимо їх у консолі. У випадку помилки ми виводимо повідомлення про помилку в консолі, використовуючи метод console.error().`,
+          },
+          {
+            code: false,
+            label: `7. CONNECT - встановлення мережевого з'єднання з сервером.`,
+            description: `Метод CONNECT використовується для встановлення мережевого з'єднання між клієнтом і сервером за допомогою протоколу TLS/SSL. Використовується в основному для забезпечення безпеки і шифрування даних, переданих між клієнтом і сервером. Зазвичай він використовується для з'єднання з проксі-серверами.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Оскільки цей метод використовується переважно для внутрішньої мережевої комунікації, він рідко використовується у клієнтських додатках. Використання методу CONNECT зазвичай приховане від користувача, а з'єднання установлюється автоматично через проксі-сервери.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Отже, в більшості випадків ви не повинні використовувати метод CONNECT у своїх програмах, якщо ви не створюєте програми, пов'язані з безпекою мережі.
+              Якщо ви все ж хочете спробувати виконати запит з методом CONNECT у fetch(), ви можете використати код, подібний до наступного:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+              fetch('https://example.com', {
+                method: 'CONNECT',
+              })
+              .then(response => console.log(response))
+              .catch(error => console.error(error));            
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Однак, ймовірно, у вас виникнуть проблеми з автентифікацією на сервері, тому я раджу використовувати цей метод тільки в тому випадку, якщо ви знаєте, що він дійсно необхідний у вашому конкретному випадку.`,
+          },
+          {
+            code: false,
+            label: '8. TRACE - запит на отримання поверхневої інформації про те, як сервер обробляє запит.',
+            description: `Метод TRACE використовується для діагностики мережевих проблем. Він дозволяє клієнту отримати зворотню інформацію від сервера про кожен крок, що відбувається з запитом, відправленим до сервера.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Під час використання методу TRACE, клієнтський запит повторюється на сервері, а сервер відповідає з повідомленням, яке містить всю інформацію про запит. Це може бути корисним для діагностики проблем з мережевим з'єднанням, розуміння того, як сервер обробляє запити та відповідає на них, а також для перевірки того, чи змінювалися дані запиту під час пересилання по мережі.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Якщо ви хочете використати метод TRACE у fetch(), ви можете використати наступний код:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+              fetch('https://example.com', {
+                method: 'TRACE',
+              })
+              .then(response => console.log(response))
+              .catch(error => console.error(error));
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Але, як і в разі методу CONNECT, я раджу використовувати цей метод тільки в діагностичних цілях та якщо ви знаєте, що він дійсно необхідний у вашому конкретному випадку.`,
           },
         ],
       },
+      {
+        id: '2_4',
+        question: 'Що таке HTTP cookie? Для чого їх використовують?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке HTTP cookie?',
+            description: `HTTP cookie - це невеликий фрагмент даних, який веб-сайт зберігає на комп'ютері користувача. Вони зазвичай використовуються для зберігання інформації про користувача та його перевірці при наступних відвідуваннях веб-сайту.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Коли користувач відвідує веб-сайт, сервер може відправити HTTP-відповідь з заголовком Set-Cookie. Цей заголовок містить інформацію про кукі, який повинен зберігатися на комп'ютері користувача. Коли користувач повертається на веб-сайт, його браузер надсилає HTTP-запит зі всіма кукі, які зберігаються на його комп'ютері. Сервер може використовувати ці кукі для ідентифікації користувача та надання персоналізованого досвіду використання.`,
+          },
+          {
+            code: false,
+            label: 'Для чого їх використовують?',
+            description: `Кукі використовуються для різних цілей, таких як зберігання налаштувань користувача, ідентифікації користувача, зберігання товарів у кошику покупок та відстеження діяльності користувача на веб-сайті. Наприклад, коли користувач здійснює покупку в інтернет-магазині, його кукі можуть зберігати інформацію про товари в кошику покупок, щоб зберегти вибір користувача після перезавантаження сторінки. Кукі також можуть використовуватися для зберігання інформації про вхід в систему користувача, щоб він не потребував вводити дані вхідної форми при кожному відвідуванні веб-сайту.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Хоча кукі зазвичай не є шкідливими, вони можуть становити ризик для приватності користувача, оскільки вони можуть містити особисту інформацію про користувача.`,
+          },
+        ],
+      },
+      {
+        id: '2_5',
+        question: 'Що таке WebSocket? У чому принцип його роботи?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке WebSocket?',
+            description: `WebSocket - це технологія, що дозволяє встановлювати двостороннє з'єднання між клієнтом та сервером через один TCP-з'єднання. WebSocket було розроблено з метою зменшення затримок при обміні даними між клієнтом та сервером та для зменшення навантаження на сервер.`,
+          },
+          {
+            code: false,
+            label: 'У чому принцип його роботи?',
+            description: `Принцип роботи WebSocket полягає в тому, що спочатку клієнт та сервер встановлюють зв'язок через стандартний HTTP-запит. Після цього сервер відповідає з заголовком "Upgrade: WebSocket", який означає, що зв'язок був успішно оновлений до WebSocket.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Після встановлення з'єднання WebSocket клієнт та сервер можуть відправляти додаткові повідомлення один одному без необхідності повторного встановлення з'єднання. Кожне повідомлення має заголовок, що дозволяє ідентифікувати його тип.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `WebSocket може бути використаний для багатьох різних завдань, наприклад, для розробки онлайн-ігор, чатів, відео-стрімінгу тощо. В порівнянні з іншими технологіями, WebSocket забезпечує більш ефективний обмін даними між клієнтом та сервером, зменшує навантаження на сервер та забезпечує більш швидку реакцію на події.`,
+          },
+          {
+            code: false,
+            label: 'Як встановлюється звязок через HTTP-запит?',
+            description: `Зв'язок між клієнтом та сервером зазвичай встановлюється за допомогою стандартного HTTP-запиту типу GET або POST. Клієнт ініціює зв'язок, надсилаючи запит на сервер за певним URL-адресом. Запит містить заголовки, які містять інформацію про запит та можуть включати додаткові параметри.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Сервер, отримавши запит, оброблює його та надсилає відповідь клієнту. Відповідь також містить заголовки, які містять інформацію про відповідь та можуть включати додаткові параметри, такі як кешування або інформація про тип даних, що повертаються.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Якщо під час обробки запиту клієнт та сервер погоджуються використовувати протокол WebSocket, то після відправлення сервером заголовку "Upgrade: WebSocket" з'єднання між клієнтом та сервером переходить у режим WebSocket. З цього моменту клієнт та сервер можуть відправляти повідомлення один одному без необхідності повторного встановлення з'єднання через HTTP-запит.`,
+          },
+        ],
+      },
+      {
+        id: '2_6',
+        question: 'Різниця між HTTP та HTTPS?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Різниця між HTTP та HTTPS?',
+            description: `Основна різниця між HTTP та HTTPS полягає в тому, що HTTP є протоколом передачі даних через Інтернет у відкритому вигляді, тоді як HTTPS - це захищений протокол передачі даних, який використовує шифрування для забезпечення безпеки даних.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `HTTP передає дані відкрито, тому будь-яка інформація, надіслана через HTTP-запит, може бути перехоплена та переглянута ким завгодно. З цієї причини передача конфіденційних даних, таких як логіни та паролі, через HTTP є небезпечною.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `HTTPS використовує протокол TLS (Transport Layer Security) або SSL (Secure Sockets Layer), щоб зашифрувати дані, надіслані через Інтернет, що забезпечує більш високий рівень безпеки. Коли веб-браузер отримує відповідь від сервера по HTTPS, то спочатку відбувається процес обміну сертифікатами для підтвердження автентичності сервера, після чого весь трафік між браузером та сервером шифрується.`,
+          },
+        ],
+      },
+      {
+        id: '2_7',
+        question: 'Long-Polling, Websockets та Server-Sent Events',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: `Long-Polling, Websockets та Server-Sent Events (SSE) є різними підходами до реалізації двостороннього зв'язку між клієнтом та сервером у веб-додатках.`,
+          },
+          {
+            code: false,
+            label: 'Long-Polling',
+            description: `Long-Polling використовує запити HTTP, але затримує відповідь сервера на певний час. Коли сервер готовий надіслати відповідь, він повертає її клієнту, після чого клієнт відправляє новий запит. Цей процес повторюється багато разів, щоб створити враження миттєвої взаємодії між клієнтом та сервером.`,
+          },
+          {
+            code: false,
+            label: 'Websockets',
+            description: `Websockets, з іншого боку, створюють постійне двостороннє з'єднання між клієнтом та сервером через протокол WebSocket. Це дозволяє серверу відправляти повідомлення клієнту, коли вони готові, без очікування запитів від клієнта. Це забезпечує швидку і миттєву взаємодію між клієнтом та сервером, а також значно зменшує кількість запитів, необхідних для обміну даними.`,
+          },
+          {
+            code: false,
+            label: 'Server-Sent Events (SSE)',
+            description: `Server-Sent Events (SSE) також дозволяють серверу відправляти повідомлення клієнту, але вони використовуються лише для відправки даних від сервера до клієнта. Клієнт може підписатися на потік повідомлень від сервера і приймати їх безпосередньо у своєму браузері. SSE часто використовуються для відображення живих оновлень даних, таких як новини, ігрові події, цінові зміни тощо.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Узагальнюючи, Long-Polling є більш простим, але менш ефективним підходом до забезпечення двостороннього зв'язку між клієнтом та сервером, тоді як Websockets та SSE надають більш ефективні та потужні засоби для цього`,
+          },
+        ],
+      },
+      {
+        id: '2_8',
+        question: 'Різниця між PUT- і POST-запитами?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Різниця між PUT- і POST-запитами?',
+            description: `PUT і POST є двома типами HTTP-запитів, які використовуються для відправки даних на сервер. Основною різницею між ними є те, як вони взаємодіють з ресурсами на сервері.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `PUT-запит використовується для зміни існуючих даних на сервері. Цей запит вимагає, щоб вказаний ресурс на сервері був замінений вказаними даними. Якщо ресурс відсутній, то він буде створений.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `POST-запит, з іншого боку, використовується для відправки нових даних на сервер. Він використовується, коли потрібно створити новий ресурс на сервері або відправити дані на сервер для подальшої обробки. Крім того, POST-запит може використовуватись для оновлення даних на сервері, якщо це потрібно.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Отже, основна різниця між PUT- і POST-запитами полягає в тому, що PUT-запит використовується для зміни існуючих даних, тоді як POST-запит використовується для відправки нових даних на сервер.`,
+          },
+        ],
+      },
+      {
+        id: '2_9',
+        question: 'Що таке безпечні (Secure) та HttpOnly cookies?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке безпечні (Secure) та HttpOnly cookies?',
+            description: `Безпечні (Secure) та HttpOnly cookies - це два різні атрибути, які можна встановлювати для HTTP cookies для забезпечення додаткової безпеки.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Атрибут "Secure" вказує на те, що cookie можна використовувати тільки в тому випадку, якщо використовується безпечний протокол зв'язку HTTPS. Якщо веб-сайт використовує HTTPS, то при встановленні cookie встановлюється атрибут "Secure", що дозволяє браузеру передавати cookie тільки через зашифрований канал, а не через незахищені HTTP-запити.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Атрибут "HttpOnly" вказує на те, що cookie не може бути доступний з JavaScript. Це дозволяє захистити cookie від Cross-Site Scripting (XSS) атак, де зловмисник може використовувати JavaScript для отримання доступу до cookie та отримання конфіденційної інформації. Якщо встановлений атрибут "HttpOnly", то веб-програмісти не можуть отримувати доступ до cookie через JavaScript, що дозволяє зменшити ризик XSS-атак.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Отже, використання атрибутів "Secure" та "HttpOnly" є додатковими заходами безпеки для HTTP cookies, які допомагають захистити конфіденційну інформацію користувачів від атак зловмисників.`,
+          },
+        ],
+      },
+      {
+        id: '2_10',
+        question: 'Що таке Content Security Policy (CSP)?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке Content Security Policy (CSP)?',
+            description: `Content Security Policy (CSP) - це механізм безпеки, що дозволяє зменшити ризик атак на веб-додатки, зокрема на XSS (Cross-Site Scripting) атаки. CSP дає можливість вказати браузеру, які джерела контенту дозволені для завантаження на сторінці, що зменшує можливість виконання зловмисного коду на сторінці в разі, якщо він завантажується з небезпечного джерела.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `За допомогою CSP можна вказати джерела контенту для різних видів ресурсів, таких як скрипти, стилі, медіа-файли, шрифти, фрейми, AJAX-запити та інші. Також можна налаштувати відправку звіту про спробу завантаження контенту з небезпечних джерел, що дозволяє виявляти та усувати можливі проблеми безпеки.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Приклад вказання CSP на веб-сторінці може виглядати так:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `Content-Security-Policy: default-src 'self' https://trusted.com; script-src 'self' 'unsafe-inline' https://trusted.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://trusted.com; img-src 'self' data: https://trusted.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; report-uri /csp-report`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми вказуємо, що контент може завантажуватись з поточного джерела ('self'), з довірених джерел (https://trusted.com) для всіх типів контенту, окрім object-src, де ми вказуємо none, щоб заборонити завантаження об'єктів. Крім того, ми вказуємо джерела для кожного типу контенту окремо: для скриптів (script-src) - 'self', 'unsafe-inline', https://trusted.com, https://ajax.googleapis.com; для стилів (style-src) - 'self', 'unsafe-inline', https://trusted.com; для зображень (img-src) - 'self', data:, https://trusted.com. `,
+          },
+        ],
+      },
+      {
+        id: '2_11',
+        question: 'XML',
+        descriptions: [
+          {
+            code: false,
+            label: 'XML',
+            description: `XML (Extensible Markup Language) - це розширюваний мовний формат, який використовується для зберігання та обміну даними між різними системами. XML є текстовим форматом, що описує дані за допомогою тегів та атрибутів, подібно до HTML. Однак, на відміну від HTML, XML не визначає передбачуваний набір тегів, що дає можливість використовувати його для будь-яких типів даних.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `в XML немає заздалегідь визначеного списку тегів, як у HTML. В HTML ви знаєте, що теги, такі як <div>, <p>, <img> і т.д., мають визначене призначення та семантику, і їх застосовують у відповідних випадках. Однак, в XML ви можете створювати власні теги з будь-яким ім'ям і використовувати їх для опису будь-якого типу даних, що дає більшу гнучкість та можливість створення власних мов опису даних. Таким чином, XML набагато більш гнучкий та універсальний, ніж HTML.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `XML є стандартом, який можна використовувати у багатьох галузях, включаючи веб-розробку, обробку даних, наукові дослідження, фінанси та багато іншого. XML дозволяє описувати будь-який тип структурованих даних, що робить його потужним інструментом для обміну даними між різними системами та застосунками.`,
+          },
+        ],
+      },
+      {
+        id: '2_12',
+        question: 'AJAX',
+        descriptions: [
+          {
+            code: false,
+            label: 'AJAX',
+            description: `AJAX (Asynchronous JavaScript and XML) - це технологія, яка дозволяє веб-сторінкам взаємодіяти з сервером без перезавантаження сторінки. Завдяки AJAX можна отримувати та відправляти дані на сервер без необхідності в повній перезагрузці сторінки.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `AJAX забезпечує асинхронну взаємодію між веб-сторінкою та сервером за допомогою JavaScript-запитів, що виконуються під час роботи сторінки. Це дозволяє завантажувати частини веб-сторінки без повної перезагрузки, що підвищує її продуктивність та зручність використання.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У сучасних веб-додатках AJAX зазвичай використовується для побудови динамічного інтерфейсу, отримання та відображення даних у режимі реального часу, валідації форм, перевірки доступності служб та багатьох інших сценаріїв.`,
+          },
+        ],
+      },
+      
     ],
   },
+  // {
+  //   id: 2,
+  //   name: 'Git',
+  //   questions: [
+  //     {
+  //       id: '2_1',
+  //       question: 'question 1',
+  //       descriptions: [
+  //         {
+  //           code: false,
+  //           label: 'What is DNS?',
+  //           description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
+  //           Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+  //         },
+  //         {
+  //           code: false,
+  //           label: 'How does DNS work?',
+  //           description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
+  //           In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+  //         },
+  //         {
+  //           code: true,
+  //           label: 'Code',
+  //           description: `
+  //             import { useEffect, useState } from 'react';
+  //             import { Module, Question } from '../interfaces';
+              
+  //             const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
+  //               const [result, setResult] = useState<Module | Question | null>(null);
+              
+  //               const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
+  //                   for (let i = 0; i < array.length; i++) {
+  //                     const obj = array[i];
+  //                     if ("questions" in obj) {
+  //                       const moduleObj = obj as Module;
+  //                       getObjectById(moduleObj.questions, idForSearch);
+  //                     }
+  //                     if (obj.id === idForSearch) {
+  //                       setResult(obj as Module | Question);
+  //                       break;
+  //                     }
+  //                   }
+  //                 }
+              
+  //               useEffect(() => {
+  //                 getObjectById(array, id);
+  //               }, [array, id]);
+              
+  //               return result;
+  //             };
+              
+  //             export default useGetObjectById;
+  //           `,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: '2_2',
+  //       question: 'question 2',
+  //       descriptions: [
+  //         {
+  //           code: false,
+  //           label: 'What is DNS?',
+  //           description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
+  //           Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+  //         },
+  //         {
+  //           code: false,
+  //           label: 'How does DNS work?',
+  //           description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
+  //           In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+  //         },
+  //         {
+  //           code: true,
+  //           label: 'Code',
+  //           description: `
+  //             import { useEffect, useState } from 'react';
+  //             import { Module, Question } from '../interfaces';
+              
+  //             const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
+  //               const [result, setResult] = useState<Module | Question | null>(null);
+              
+  //               const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
+  //                   for (let i = 0; i < array.length; i++) {
+  //                     const obj = array[i];
+  //                     if ("questions" in obj) {
+  //                       const moduleObj = obj as Module;
+  //                       getObjectById(moduleObj.questions, idForSearch);
+  //                     }
+  //                     if (obj.id === idForSearch) {
+  //                       setResult(obj as Module | Question);
+  //                       break;
+  //                     }
+  //                   }
+  //                 }
+              
+  //               useEffect(() => {
+  //                 getObjectById(array, id);
+  //               }, [array, id]);
+              
+  //               return result;
+  //             };
+              
+  //             export default useGetObjectById;
+  //           `,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: '2_3',
+  //       question: 'question 3',
+  //       descriptions: [
+  //         {
+  //           code: false,
+  //           label: 'What is DNS?',
+  //           description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
+  //           Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+  //         },
+  //         {
+  //           code: false,
+  //           label: 'How does DNS work?',
+  //           description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
+  //           In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+  //         },
+  //         {
+  //           code: true,
+  //           label: 'Code',
+  //           description: `
+  //             import { useEffect, useState } from 'react';
+  //             import { Module, Question } from '../interfaces';
+              
+  //             const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
+  //               const [result, setResult] = useState<Module | Question | null>(null);
+              
+  //               const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
+  //                   for (let i = 0; i < array.length; i++) {
+  //                     const obj = array[i];
+  //                     if ("questions" in obj) {
+  //                       const moduleObj = obj as Module;
+  //                       getObjectById(moduleObj.questions, idForSearch);
+  //                     }
+  //                     if (obj.id === idForSearch) {
+  //                       setResult(obj as Module | Question);
+  //                       break;
+  //                     }
+  //                   }
+  //                 }
+              
+  //               useEffect(() => {
+  //                 getObjectById(array, id);
+  //               }, [array, id]);
+              
+  //               return result;
+  //             };
+              
+  //             export default useGetObjectById;
+  //           `,
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     id: 3,
     name: 'HTML',
