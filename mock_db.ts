@@ -1086,7 +1086,522 @@ Compositing - це процес складання відображення ст
           },
         ],
       },
-      
+      {
+        id: '2_13',
+        question: 'Що таке CORS?',
+        descriptions: [
+          {
+            code: false,
+            label: 'CORS',
+            description: `CORS (Cross-Origin Resource Sharing) - це механізм безпеки браузера, який дозволяє веб-сторінкам запитувати ресурси з інших доменів і серверів. При цьому, браузер перевіряє, чи дозволяє сервер, з якого запитується ресурс, отримувати запити з домену, з якого робиться запит.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Це зроблено для запобігання зловживанням з боку зловмисників, які можуть використовувати код на стороні клієнта для здійснення атак на інші сайти. За допомогою CORS можна дозволити або заборонити запити з конкретних доменів до веб-сайту.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Для налаштування CORS на сервері зазвичай використовують заголовки HTTP, наприклад, Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Headers тощо.`,
+          },
+          {
+            code: true,
+            label: 'Ось приклад коду, який додає заголовки CORS до відповіді сервера:',
+            description: `
+              const express = require('express');
+              const app = express();
+              
+              // Додавання заголовків CORS до відповіді сервера
+              app.use(function(req, res, next) {
+                res.header('Access-Control-Allow-Origin', '*');
+                res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+                res.header('Access-Control-Allow-Headers', 'Content-Type');
+                next();
+              });
+              
+              // Маршрутизація запитів
+              app.get('/', function(req, res) {
+                res.send('Привіт з сервера!');
+              });
+              
+              // Запуск сервера
+              app.listen(3000, function() {
+                console.log('Сервер запущено на порту 3000!');
+              });
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому коді ми використовуємо Express.js для створення сервера і додаємо функцію middleware для додавання заголовків CORS до відповіді сервера. Конкретно, ми додаємо заголовок Access-Control-Allow-Origin зі значенням * (дозволяє запити з будь-якого джерела), заголовок Access-Control-Allow-Methods зі значенням дозволених методів (GET, PUT, POST, DELETE) та заголовок Access-Control-Allow-Headers зі значенням дозволених заголовків запиту. Це дозволяє браузеру клієнта виконувати запити до нашого сервера з будь-якого джерела.`,
+          },
+        ],
+      },
+      {
+        id: '2_14',
+        question: 'Різниця між протоколами TCP і UDP?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Різниця між протоколами TCP і UDP?',
+            description: `TCP (Transmission Control Protocol) і UDP (User Datagram Protocol) - це два основних протоколи мережевого рівня, які використовуються для передачі даних між пристроями в мережі.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Основна різниця між цими протоколами полягає в тому, як вони гарантують доставку даних.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `TCP забезпечує забезпечує точну передачу даних, які надходять у вигляді послідовних пакетів. Він використовує механізми підтвердження прийому даних та повторної передачі в разі втрати даних. TCP також контролює потік даних, щоб уникнути перевантаження мережі.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `UDP надає меншу гарантію щодо доставки даних, він не передбачає підтвердження прийому даних та повторної передачі в разі втрати даних. Він просто відправляє пакети даних і не контролює їх потік.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Це робить UDP більш швидким за TCP, але менш надійним у тих випадках, коли надійність передачі даних є критично важливою, наприклад, при передачі відео або голосових даних.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Узагалі, TCP використовується для передачі великих обсягів даних, коли точність та надійність передачі даних є важливими, тоді як UDP використовується для швидкої передачі невеликих обсягів даних.`,
+          },
+        ],
+      },
+      {
+        id: '2_15',
+        question: 'Що таке Service Workers?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке Service Workers?',
+            description: `Service Workers - це скрипти JavaScript, які запускаються в окремому фоновому процесі в браузері і дають можливість розробникам керувати кешуванням, мережевим запитом і поведінкою вашої веб-сторінки під час офлайн взаємодії з користувачем.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Service Workers можуть працювати на задньому плані, незалежно від вашого веб-застосунку, і мають доступ до певного API браузера, який дозволяє їм керувати кешуванням, мережевим запитом і поведінкою вашої веб-сторінки. Вони також можуть використовуватись для реалізації пуш-повідомлень і для покращення швидкості роботи веб-застосунку.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Service Workers працюють в контексті домену, з якого вони були зареєстровані, і вони можуть працювати тільки з HTTPS-з'єднаннями, щоб забезпечити безпеку користувачів. Це означає, що Service Workers можуть бути використані лише на живих веб-сайтах, а не на локальному комп'ютері.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Нижче наведено приклад налаштування Service Worker у ReactJS.`,
+          },
+          {
+            code: true,
+            label: '1. Створіть файл serviceWorker.js в корені вашого проекту. У цьому файлі ви можете зареєструвати Service Worker, визначити, які ресурси повинні бути кешовані, і які події повинні бути перехоплені.',
+            description: `
+            // serviceWorker.js
+
+            const CACHE_NAME = 'my-cache';
+            
+            self.addEventListener('install', (event) => {
+              console.log('Service Worker: Installing....');
+              event.waitUntil(
+                caches.open(CACHE_NAME)
+                  .then((cache) => {
+                    console.log('Service Worker: Caching app shell');
+                    return cache.addAll([
+                      '/',
+                      '/index.html',
+                      '/static/js/bundle.js',
+                      '/static/css/main.css'
+                    ]);
+                  })
+              );
+            });
+            
+            self.addEventListener('fetch', (event) => {
+              console.log('Service Worker: Fetching....');
+              event.respondWith(
+                caches.match(event.request)
+                  .then((response) => {
+                    if (response) {
+                      console.log('Service Worker: Serving from cache');
+                      return response;
+                    }
+                    console.log('Service Worker: Fetching from server');
+                    return fetch(event.request);
+                  })
+              );
+            });
+            `,
+          },
+          {
+            code: true,
+            label: '2. Імпортуйте Service Worker у вашому компоненті index.js.',
+            description: `
+            // index.js
+
+            import React from 'react';
+            import ReactDOM from 'react-dom';
+            import App from './App';
+            import * as serviceWorker from './serviceWorker';
+            
+            ReactDOM.render(<App />, document.getElementById('root'));
+            
+            serviceWorker.register();
+            
+            `,
+          },
+          {
+            code: true,
+            label: '3. Додайте файл manifest.json у корінь вашого проекту. У цьому файлі ви можете визначити метадані про ваше додаток, такі як іконка, назва та короткий опис.',
+            description: `
+            // manifest.json
+
+            {
+              "name": "My App",
+              "short_name": "My App",
+              "icons": [
+                {
+                  "src": "icon.png",
+                  "sizes": "192x192",
+                  "type": "image/png"
+                },
+                {
+                  "src": "icon-512.png",
+                  "sizes": "512x512",
+                  "type": "image/png"
+                }
+              ],
+              "start_url": ".",
+              "display": "standalone",
+              "theme_color": "#000000",
+              "background_color": "#ffffff"
+            }
+
+            `,
+          },
+          {
+            code: true,
+            label: '4. Додайте посилання на ваш файл маніфесту у вашому HTML-файлі.',
+            description: `
+            <!-- index.html -->
+
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+              <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+              <title>My App</title>
+            </head>
+
+            <body>
+              <div id="root"></div>
+            </body>
+
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Тепер ваш React додаток буде мати можливість працювати офлайн завдяки Service Workers.`,
+          },
+        ],
+      },
+      {
+        id: '2_16',
+        question: 'Що таке Web Worklet?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке Web Worklet?',
+            description: `Web Worklet - це механізм браузера, що дозволяє виконувати скрипти на ізольованому потоці виконання. Це дозволяє відокремити код від основного потоку виконання і запобігти блокуванню інтерфейсу користувача під час виконання важких обчислень.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Web Worklet був запропонований як альтернатива Web Workers, що відкриває шлях для більш широкого спектру використання. Web Worklet може виконувати код, який взаємодіє зі сторонніми сервісами, відображає візуальні компоненти та інші задачі, які не можна виконувати в Web Workers.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Web Worklet використовує технологію WebAssembly, яка дозволяє виконувати код на мовах програмування, які не підтримуються браузером напряму. Це робить Web Worklet більш гнучким і можливою альтернативою Web Workers для виконання важких завдань в браузері.`,
+          },
+        ],
+      },
+      {
+        id: '2_17',
+        question: 'Що таке History API в браузері?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке History API в браузері?',
+            description: `History API - це частина JavaScript-інтерфейсу браузера, яка дозволяє змінювати URL в адресній стрічці без перезавантаження сторінки та зберігати записи про історію переходів на сторінках в браузері. За допомогою History API можна змінювати URL без перезавантаження сторінки, отримувати інформацію про поточний URL та історію переходів на сторінках.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Наприклад, для того, щоб додати запис в історію переходів на сторінках, можна використати метод pushState і передати йому об'єкт з потрібними даними, як показано у прикладі:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `history.pushState({page: 2}, "Назва сторінки", "/сторінка-2");`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі метод pushState додає запис про новий URL "/сторінка-2" з назвою "Назва сторінки" та об'єктом даних {page: 2} до історії переходів на сторінках в браузері. При цьому сторінка не перезавантажується, а URL змінюється на новий. Для зчитування поточного URL можна використати властивість location.href, а для отримання даних про запис в історії переходів на сторінках - методи history.back() та history.forward().`,
+          },
+        ],
+      },
+      {
+        id: '2_18',
+        question: 'що таке веб-сховище (web storage)?',
+        descriptions: [
+          {
+            code: false,
+            label: 'що таке веб-сховище (web storage)?',
+            description: `Веб-сховище (web storage) - це механізм зберігання даних на стороні клієнта веб-додатків. Цей механізм дозволяє зберігати дані в локальному сховищі браузера без потреби взаємодії з сервером. Збережені дані доступні для веб-додатків, які вони створені для, і можуть бути використані для різних цілей, таких як збереження налаштувань користувачів, запам'ятовування даних форми, аутентифікації користувача та інших задач.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У веб-сховищі два типи об'єктів для зберігання даних: localStorage та sessionStorage. localStorage зберігає дані, які будуть доступні після закриття браузера, а sessionStorage зберігає дані, які будуть доступні лише в рамках одного сеансу браузера (тобто, поки користувач не закриє вкладку з веб-сайтом). Доступ до даних можна отримати за допомогою JavaScript API. Наприклад, для збереження даних у localStorage використовується такий синтаксис:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `localStorage.setItem('ключ', 'значення');`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `А для отримання значення з localStorage:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `const value = localStorage.getItem('ключ');`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Дані можна видалити з localStorage за допомогою методу removeItem():`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `localStorage.removeItem('ключ');`,
+          },
+        ],
+      },
+      {
+        id: '2_19',
+        question: 'Що таке sessionStorage?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке sessionStorage?',
+            description: `sessionStorage - це інтерфейс Web Storage, який зберігає дані в браузері на протязі однієї сесії, яка зберігається між сторінками. Коли користувач закриває вкладку браузера або перезавантажує сторінку, дані знищуються.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `За допомогою sessionStorage можна зберігати прості рядкові значення, що використовуються в додатку для зберігання даних в проміжку між сторінками. Значення можна отримати за ключем або встановити нове значення за ключем, який буде збережено в поточній сесії.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Наприклад, можна зберігати обраний елемент у формі, щоб він залишався вибраним при оновленні сторінки. Нижче наведено приклад встановлення і отримання значення за допомогою sessionStorage в JavaScript:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+              // встановлюємо значення для ключа "username"
+              sessionStorage.setItem("username", "John");
+
+              // отримуємо значення для ключа "username"
+              const username = sessionStorage.getItem("username");
+              console.log(username); // виведе "John"
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Значення, збережені у sessionStorage, будуть доступні на всіх сторінках в поточній сесії, але не будуть доступні на інших вкладках або після закриття браузера.`,
+          },
+        ],
+      },
+      {
+        id: '2_20',
+        question: 'Що таке BOM?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке BOM?',
+            description: `BOM означає «Browser Object Model» (Об'єктна модель браузера) і є частиною API браузера. Це колекція об'єктів, що відображають властивості та функції браузера, які можуть використовуватися для маніпулювання вмістом веб-сторінки.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `До BOM належать такі об'єкти, як window, navigator, location, history, screen та інші. Ці об'єкти надають розробникам можливість отримувати доступ до різних функціональних можливостей браузера, таких як взаємодія з користувачем, навігація, робота з документами та інше. Наприклад, властивість window.location надає доступ до поточної адреси URL сторінки, а window.alert() викликає діалогове вікно з повідомленням для користувача.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `За допомогою BOM можна маніпулювати не тільки веб-сторінками, а й самим браузером, таким чином, щоб змінювати розміри та положення вікна браузера, відкривати та закривати нові вкладки тощо. Однак, слід пам'ятати, що використання BOM може стати причиною проблем з кросбраузерною сумісністю, тому розробники повинні звертати на це увагу.`,
+          },
+        ],
+      },
+      {
+        id: '2_21',
+        question: 'Різниця між cookie, sessionStorage та localStorage?',
+        descriptions: [
+          {
+            code: false,
+            label: 'cookie, sessionStorage та localStorage',
+            description: `У веб-розробці є декілька способів зберігання даних в браузері, серед яких cookie, sessionStorage та localStorage. Ось їхні основні відмінності:`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `1. Cookie - це невеликі текстові файли, які зберігаються в браузері користувача. Вони зазвичай використовуються для зберігання інформації про користувача або його налаштування, які можуть бути використані на інших сторінках сайту. Куки можуть бути встановлені з сервера або з JavaScript на стороні клієнта.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `2. sessionStorage - це механізм зберігання даних в браузері, який дозволяє зберігати дані протягом одного сеансу роботи з сайтом. Дані, збережені у sessionStorage, зникають після закриття вкладки або браузера.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `3. localStorage - це механізм зберігання даних в браузері, який дозволяє зберігати дані назавжди або до тих пір, поки користувач не видалить їх вручну або не очистить кеш браузера.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Отже, основна відмінність між цими трьома механізмами зберігання даних полягає в тривалості збереження. Cookie - це найменш потужний з них, оскільки він зберігається тільки на короткий проміжок часу. sessionStorage дозволяє зберігати дані протягом одного сеансу роботи з сайтом, тоді як localStorage дозволяє зберігати дані на невизначений термін.`,
+          },
+        ],
+      },
+      {
+        id: '2_22',
+        question: 'Що таке REST та RESTful api?',
+        descriptions: [
+          {
+            code: false,
+            label: 'REST та RESTful api',
+            description: `REST (Representational State Transfer) - це архітектурний стиль для створення мережевих протоколів. RESTful API - це API, яке дотримується принципів REST.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `REST побудований на основі HTTP і складається з наступних принципів:`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `• Кожен ресурс (наприклад, користувач, коментар, замовлення) ідентифікується унікальним URI (Uniform Resource Identifier).`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `• Клієнт взаємодіє з сервером за допомогою стандартних HTTP-запитів, таких як GET, POST, PUT і DELETE, що відповідають CRUD-операціям (створення, читання, оновлення та видалення).`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `• Кожен запит містить всю необхідну інформацію для обробки запиту (stateless). Сервер не зберігає стан клієнта між запитами.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `• Відповідь сервера повинна бути чіткою і включати в себе достатню інформацію про ресурс, який запитується.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `RESTful API повинен дотримуватися цих принципів, а також надати легку для розуміння документацію та демонстраційні приклади взаємодії з API. Взаємодія з RESTful API повинна бути безпечною, ефективною і масштабованою.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Основним способом використання RESTful API в React є використання функцій fetch() або бібліотеки, як от Axios чи jQuery AJAX. Ось приклад використання fetch():`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+            import React, { useState, useEffect } from 'react';
+
+            function Example() {
+              const [data, setData] = useState(null);
+            
+              useEffect(() => {
+                async function fetchData() {
+                  const response = await fetch('/api/data');
+                  const jsonData = await response.json();
+                  setData(jsonData);
+                }
+            
+                fetchData();
+              }, []);
+            
+              if (!data) {
+                return <div>Loading...</div>;
+              }
+            
+              return (
+                <div>
+                  <h1>{data.title}</h1>
+                  <p>{data.description}</p>
+                </div>
+              );
+            }            
+            `,
+          },
+          {
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми використовуємо функцію fetch() для отримання даних з нашого RESTful API, яке відповідає на запит на /api/data. Після того, як ми отримаємо відповідь, ми перетворюємо її на об'єкт JSON і встановлюємо його як стан компонента за допомогою setData(). Якщо дані ще не завантажилися, ми виводимо повідомлення "Loading...". Якщо ж дані вже отримано, ми відображаємо їх у відповідних елементах.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Це дуже простий приклад, але можна використовувати різні методи HTTP-запитів (GET, POST, PUT, DELETE) для виконання операцій з базою даних. Також можна використовувати параметри запиту, щоб фільтрувати або сортувати дані перед їхнім отриманням.`,
+          },
+        ],
+      },
+      {
+        id: '2_23',
+        question: 'Що таке Triple handshake?',
+        descriptions: [
+          {
+            code: false,
+            label: 'REST та RESTful api',
+            description: `Triple handshake - це процес установки з'єднання в протоколі TCP, який передбачає взаємодію клієнта і сервера у трьох етапах.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `При встановленні з'єднання клієнт надсилає запит на підключення до сервера, відправляючи пакет з установлюючим флагом (SYN). Сервер отримує запит і відповідає на нього пакетом з флагами SYN та ACK. Клієнт в свою чергу надсилає підтвердження ACK.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Triple handshake відрізняється від двостороннього handshake, де після відправлення запиту на підключення клієнт чекає відповіді від сервера і надсилає підтвердження ACK разом з першими даними, що надсилає на сервер.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `riple handshake використовується для забезпечення стабільності з'єднання, оскільки перед відправкою даних клієнт та сервер перевіряють, чи є з'єднання доступним для передачі даних.`,
+          },
+        ],
+      },
     ],
   },
   // {
