@@ -1600,7 +1600,7 @@ Compositing - це процес складання відображення ст
         descriptions: [
           {
             code: false,
-            label: 'REST та RESTful api',
+            label: 'Triple handshake',
             description: `Triple handshake - це процес установки з'єднання в протоколі TCP, який передбачає взаємодію клієнта і сервера у трьох етапах.`,
           },
           {
