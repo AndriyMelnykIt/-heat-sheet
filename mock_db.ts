@@ -1628,157 +1628,206 @@ Compositing - це процес складання відображення ст
     questions: [
       {
         id: generateUUID(),
-        question: 'question 1',
+        question: 'Як можна скасувати коміт у Git, якщо він уже був опублікований?',
         descriptions: [
           {
             code: false,
-            label: 'What is DNS?',
-            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
-          },
-          {
-            code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
-          },
-          {
-            code: true,
-            label: 'Code',
-            description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
-            `,
+            label: 'Як можна скасувати коміт у Git, якщо він уже був опублікований?',
+            description: `Як варіант, зробивши обернений коміт за допомогою команди git revert [commit SHA]. Це створить коміт, що скасовує зміни зазначеного комміту. Після цього необхідно відправити зміни у віддалений репозиторій за допомогою команди git push [repository]/branch-name. Якщо коміт зроблено на особистій гілці, яка не використовується ніким крім автора, помилковий коміт можна відзначити прапором drop в інтерактивному режимі ребейза (git rebase -i), що повністю видалить зазначений коміт з історії. Після цього необхідно відправити зміни у віддалений репозиторій за допомогою команди git push [repository]/branch-name з прапором force.`,
           },
         ],
       },
       {
         id: generateUUID(),
-        question: 'question 2',
+        question: 'У чому полягає різниця між git pull і git fetch?',
         descriptions: [
           {
             code: false,
-            label: 'What is DNS?',
-            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
-          },
-          {
-            code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
-          },
-          {
-            code: true,
-            label: 'Code',
-            description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
-            `,
+            label: 'У чому полягає різниця між git pull і git fetch?',
+            description: `Git pull витягує (fetch) дані з сервера і автоматично робить злиття (merge) їх із кодом поточної гілки. Git fetch — зв'язується з віддаленим репозиторієм та отримує дані, які відсутні у локальному. Під час виконання цієї команди злиття не відбувається.`,
           },
         ],
       },
       {
         id: generateUUID(),
-        question: 'question 3',
+        question: 'Що таке "staging area" або "index" в Git?',
         descriptions: [
           {
             code: false,
-            label: 'What is DNS?',
-            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+            label: 'Що таке "staging area" або "index" в Git?',
+            description: `Staging area (область підготовлених файлів) — файл, який зазвичай розташовується в Git-директорії і містить інформацію про зміни, які потраплять до наступного коміту.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'За що відповідає команда Git stash?',
+        descriptions: [
+          {
+            code: false,
+            label: 'За що відповідає команда Git stash?',
+            description: `Git stash - команда, що зберігає змінений стан робочої директорії або окремого файлу в сховищі незавершених змін. Це дає можливість будь-якої миті застосувати їх назад. Наприклад, якщо потрібно перейти між гілками без фіксації змін, можна застосувати команду git stash, робоча директорія залишиться без змін, дані будуть збережені в спеціальному сховищі. Щоб переглянути заховані зміни, потрібно викликати команду git stash list, а для застосування — git stash apply.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Як знайти список файлів, які змінилися у певному коміті?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Як знайти список файлів, які змінилися у певному коміті?',
+            description: `Це досягається переглядом історії коммітів за допомогою команди git log із застосуванням певних прапорів:`,
           },
           {
             code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+            label: '',
+            description: `stat - під кожним із коммітів з'явиться список та кількість змінених файлів, кількість рядків, доданих та віддалених у кожному з файлів. Насамкінець, під списком, буде виведено сумарну статистику.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `name-status — показує список змінених файлів, видалених.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Для пошуку списку файлів у конкретному коміті можна виконати команду git show і вказати хеш комміта.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'За що відповідає команда "git config"?',
+        descriptions: [
+          {
+            code: false,
+            label: 'За що відповідає команда "git config"?',
+            description: `Git config — команда, яка дозволяє переглядати та настроювати конфігурацію git репозиторію.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'З чого складається коміт у Git?',
+        descriptions: [
+          {
+            code: false,
+            label: 'З чого складається коміт у Git?',
+            description: `Коміт — це список, який складається з об'єктів із зміненими файлами та посилання на попередній коміт. Також вказуються імена автора, мітки часу та повідомлення комміту.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Как створити Git-репозиторий ?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Как створити Git-репозиторий ?',
+            description: `Створити Git-репозиторій можна двома шляхами. Перший – версіонування існуючого проекту. Для цього потрібно перейти в папку з проектом та виконати команду git init, що задасть структуру Git-репозиторію. Після базової конфігурації (git config), репозиторія можна буде версіонувати проект.
+Другий: клонування віддаленого репозиторію. Для цього потрібно виконати команду git clone [url],
+            Де [url] - адреса репозиторію.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Як об`єднати кілька окремих коммітів в один цілісний коміт?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Як об`єднати кілька окремих коммітів в один цілісний коміт?',
+            description: `Це можна зробити за допомогою перебазування в інтерактивному режимі (rebase). Наприклад, щоб об'єднати, 3 останніх коммита в один, необхідно виконати команду git rebase -i HEAD~3 (3 відповідає числу коммітів, які потрібно об'єднати, відлік від HEAD). Відкриється вікно редактора, в якому перші 3 рядки відповідають останнім трьом комітам:`,
           },
           {
             code: true,
-            label: 'Code',
-            description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
-            `,
+            label: '',
+            description: `pick ab37583 Added feature 1.
+pick 3ab2b83 Added feature 2.
+pick 3ab5683 Added feature 3`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `На початку кожного рядка стоїть слово "pick". Потрібно змінити його на squash або s, зберегти зміни, закрити редактор, після чого git попросить задати повідомлення нового комміта, що містить зміни трьох вихідних.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'За що відповідає команда Git Bisect? Як її можна використовувати визначення джерела бага (регресії) ?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Команда Git Bisect',
+            description: `Команда Git bisect виконує бінарний пошук з історії комітів. Якщо невідомо, де знаходиться проблема і було зроблено багато коммітів, можна скористатися командою git bisect, щоб визначити комміт, який викликав проблему. Для цього потрібно виконати команду: git bisect start, потім git bisect bad це вкаже Git комміт, в якому була виявлена проблема. Коміт git bisect good [хеш комміта] вкаже Git комміт у якому проблема не виявляється. Далі Git з'ясує кількість проміжних коммітів та за допомогою бінарного пошуку, пересуваючи покажчик на деякі з проміжних коммітів, допоможе знайти проблемний.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Як налаштувати Git-репозиторій',
+        descriptions: [
+          {
+            code: false,
+            label: 'Як налаштувати Git-репозиторій для запуску інструментів перевірки працездатності коду безпосередньо перед виконанням коммітів та запобігання їх у разі збою тесту?',
+            description: `За допомогою хука pre-commit. Для цього потрібно визначити конфігураційний файл pre-commit (у папці .git/hooks), код перевірки працездатності внесених змін. Після цього, Git запускатиме вказану перевірку перед кожним коммітом. Якщо перевірка поверне код відмінний від нуля, коміт не буде застосований.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Які ви знаєте моделі розгалуження у Git? Опишіть їх.',
+        descriptions: [
+          {
+            code: false,
+            label: 'Які ви знаєте моделі розгалуження у Git? Опишіть їх.',
+            description: `Однією з найпопулярніших моделей розгалуження Git є git flow. Коротко кажучи, працюючи за цією моделлю в репозиторії повинні бути дві постійні гілки (master, develop) і будь-яка кількість тимчасових гілок (feature-, release-, hotfix-) які вливаються в основні. Порядок підготовки релізів від початку розробки та безпосередньо до здійснення релізу чітко диктується моделлю. Докладніше можна почитати за посиланням.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Яким чином можна встановити чи було злиття гілки в master?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Яким чином можна встановити чи було злиття гілки в master?',
+            description: `Команда git branch -merged відфільтровує гілки, які були злиті`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке git-rebase і для чого він потрібний?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке git-rebase і для чого він потрібний?',
+            description: `Команда git rebase (перебазирование) — применяет коммиты текущей ветки после коммитов ветки (base tip), указанной в команде rebase. С помощью rebase можно выполнять целый ряд задач: слияние веток, перемотку (fast forwarding), изменение коммитов текущей ветки (редактирование, именование, удаление, слияние, перетасовка коммитов), пересадку текущей ветки (с помощью опции —onto) и др.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке cherry pick?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке cherry pick?',
+            description: `git cherry-pick - це корисна команда, за допомогою якої можна вибірково застосувати коміти Git до поточної робочої гілки HEAD. З її допомогою можна вибрати коміт із однієї гілки та застосувати його до іншої. Команда git cherry-pick – це зручний спосіб скасувати зміни.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
           },
         ],
       },
@@ -1797,46 +1846,6 @@ Compositing - це процес складання відображення ст
             label: 'What is DNS?',
             description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
             Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
-          },
-          {
-            code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
-          },
-          {
-            code: true,
-            label: 'Code',
-            description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
-            `,
           },
         ],
       },
