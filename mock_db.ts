@@ -1820,17 +1820,6 @@ pick 3ab5683 Added feature 3`,
           },
         ],
       },
-      {
-        id: generateUUID(),
-        question: '',
-        descriptions: [
-          {
-            code: false,
-            label: '',
-            description: ``,
-          },
-        ],
-      },
     ],
   },
   {
