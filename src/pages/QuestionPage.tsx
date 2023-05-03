@@ -29,10 +29,10 @@ const QuestionPage: FC = (): JSX.Element => {
       <Header />
       {!!item && item.descriptions.length !== 0 ? (
         <>
-          {item.descriptions.map((el) => {
+          {item.descriptions.map((el, idx) => {
             if (el.code) {
               return (
-                <div key={el.label}>
+                <div key={idx}>
                   <BasicLabel>{el.label}</BasicLabel>
                   <CustomSyntaxHighlighter codeString={el.description} />
                 </div>
@@ -40,7 +40,7 @@ const QuestionPage: FC = (): JSX.Element => {
             }
 
             return (
-              <div key={el.label}>
+              <div key={idx}>
                 <BasicLabel>{el.label}</BasicLabel>
                 <Description>{el.description}</Description>
               </div>

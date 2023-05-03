@@ -1,10 +1,12 @@
+import generateUUID from './src/services/generateUUID';
+
 export const modules = [
   {
-    id: 1,
+    id: generateUUID(),
     name: 'Internet',
     questions: [
       {
-        id: '1_1',
+        id: generateUUID(),
         question: 'What is DNS?',
         descriptions: [
           {
@@ -56,18 +58,19 @@ export const modules = [
         ],
       },
       {
-        id: '1_2',
+        id: generateUUID(),
         question: 'Прогресивний рендеринг',
         descriptions: [
           {
             code: false,
             label: 'Що таке прогресивний рендеринг?',
-            description: 'Прогресивний рендеринг – це назва технологій, що використовуються для прискорення відтворення сторінок (зокрема, для зменшення часу завантаження), щоб показати користувачеві контент якнайшвидше. До того, як широкосмуговий інтернет поширився повсюдно, прогресивний рендеринг зустрічався досить часто.',
+            description:
+              'Прогресивний рендеринг – це назва технологій, що використовуються для прискорення відтворення сторінок (зокрема, для зменшення часу завантаження), щоб показати користувачеві контент якнайшвидше. До того, як широкосмуговий інтернет поширився повсюдно, прогресивний рендеринг зустрічався досить часто.',
           },
         ],
       },
       {
-        id: '1_3',
+        id: generateUUID(),
         question: 'Що таке прогресивний SSR?',
         descriptions: [
           {
@@ -78,7 +81,7 @@ export const modules = [
         ],
       },
       {
-        id: '1_4',
+        id: generateUUID(),
         question: 'Що таке потік документа?',
         descriptions: [
           {
@@ -89,8 +92,9 @@ export const modules = [
         ],
       },
       {
-        id: '1_5',
-        question: 'Різниця між адаптивним (adaptive) та чуйним (responsive) дизайнами?',
+        id: generateUUID(),
+        question:
+          'Різниця між адаптивним (adaptive) та чуйним (responsive) дизайнами?',
         descriptions: [
           {
             code: false,
@@ -106,8 +110,9 @@ export const modules = [
         ],
       },
       {
-        id: '1_6',
-        question: 'Різниця між Progressive Enhancement та Graceful Degradation?',
+        id: generateUUID(),
+        question:
+          'Різниця між Progressive Enhancement та Graceful Degradation?',
         descriptions: [
           {
             code: false,
@@ -127,7 +132,7 @@ export const modules = [
         ],
       },
       {
-        id: '1_7',
+        id: generateUUID(),
         question: 'Що таке кросбраузерність?',
         descriptions: [
           {
@@ -138,7 +143,7 @@ export const modules = [
         ],
       },
       {
-        id: '1_8',
+        id: generateUUID(),
         question: 'Babel',
         descriptions: [
           {
@@ -166,8 +171,9 @@ export const modules = [
         ],
       },
       {
-        id: '1_9',
-        question: 'Різниця між feature detection, feature inference та аналізом рядка user-agent?',
+        id: generateUUID(),
+        question:
+          'Різниця між feature detection, feature inference та аналізом рядка user-agent?',
         descriptions: [
           {
             code: false,
@@ -187,8 +193,9 @@ export const modules = [
         ],
       },
       {
-        id: '1_10',
-        question: 'Що таке Веб-компоненти та які технології в них використовуються?',
+        id: generateUUID(),
+        question:
+          'Що таке Веб-компоненти та які технології в них використовуються?',
         descriptions: [
           {
             code: false,
@@ -206,7 +213,7 @@ HTML Templates - дозволяє створювати шаблони HTML-ко�
         ],
       },
       {
-        id: '1_11',
+        id: generateUUID(),
         question: 'Способи зменшення часу завантаження веб-сторінки?',
         descriptions: [
           {
@@ -222,7 +229,7 @@ HTML Templates - дозволяє створювати шаблони HTML-ко�
         ],
       },
       {
-        id: '1_12',
+        id: generateUUID(),
         question: 'Особливості розробки мультимовних сайтів?',
         descriptions: [
           {
@@ -241,7 +248,7 @@ HTML Templates - дозволяє створювати шаблони HTML-ко�
         ],
       },
       {
-        id: '1_13',
+        id: generateUUID(),
         question: 'Що таке Flash Of Unstyled Content (FOUC)? Як його уникнути?',
         descriptions: [
           {
@@ -257,7 +264,7 @@ HTML Templates - дозволяє створювати шаблони HTML-ко�
         ],
       },
       {
-        id: '1_14',
+        id: generateUUID(),
         question: 'Різниця між layout, painting та compositing?',
         descriptions: [
           {
@@ -289,7 +296,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_15',
+        id: generateUUID(),
         question: 'Що таке Progressive Web Application?',
         descriptions: [
           {
@@ -300,7 +307,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_16',
+        id: generateUUID(),
         question: 'Що таке міжсайтовий скриптинг (XSS)?',
         descriptions: [
           {
@@ -315,7 +322,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_17',
+        id: generateUUID(),
         question: 'Що таке API?',
         descriptions: [
           {
@@ -326,7 +333,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_18',
+        id: generateUUID(),
         question: 'Що таке CDN?',
         descriptions: [
           {
@@ -337,7 +344,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_19',
+        id: generateUUID(),
         question: 'Що таке REST?',
         descriptions: [
           {
@@ -348,7 +355,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_20',
+        id: generateUUID(),
         question: 'Що таке ip-адреса?',
         descriptions: [
           {
@@ -364,7 +371,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_21',
+        id: generateUUID(),
         question: 'Різниця між host і domain?',
         descriptions: [
           {
@@ -375,7 +382,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_22',
+        id: generateUUID(),
         question: 'Що таке URL?',
         descriptions: [
           {
@@ -396,7 +403,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_23',
+        id: generateUUID(),
         question: 'Чому очищувати кеш важливо? Як це можна зробити?',
         descriptions: [
           {
@@ -416,7 +423,7 @@ Layout, painting та compositing - це три різні етапи проце
         ],
       },
       {
-        id: '1_24',
+        id: generateUUID(),
         question: 'Назвіть критичні етапи рендерингу?',
         descriptions: [
           {
@@ -431,7 +438,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '1_25',
+        id: generateUUID(),
         question: 'Що таке Core Web Vitals? Які основні метрики входять туди?',
         descriptions: [
           {
@@ -452,7 +459,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '1_26',
+        id: generateUUID(),
         question: 'Розкажіть про метрики Core Web Vitals?',
         descriptions: [
           {
@@ -463,22 +470,25 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '1_27',
+        id: generateUUID(),
         question: 'Різниця між preload, prefetch, preconnect та prerender?',
         descriptions: [
           {
             code: false,
             label: 'preload',
             description: `Цей метод використовується для попереднього завантаження важливих ресурсів сторінки, таких як шрифти, стилі, скрипти, зображення тощо. Використання цього методу дозволяє покращити швидкість завантаження сторінки, тому що браузер починає завантаження ресурсів ще до того, як вони будуть потрібні для відображення.`,
-          },{
+          },
+          {
             code: false,
             label: 'prefetch',
             description: `Цей метод використовується для попереднього завантаження ресурсів, які будуть потрібні в майбутньому. Наприклад, якщо на сторінці є посилання на іншу сторінку, то можна використовувати prefetch, щоб попередньо завантажити цю сторінку та покращити її швидкість завантаження.`,
-          },{
+          },
+          {
             code: false,
             label: 'preconnect',
             description: `Цей метод використовується для попередньої настройки з'єднання з сервером, який має надавати ресурси, щоб зменшити затримки. Наприклад, якщо на сторінці використовується сторонній шрифт або скрипт, можна використовувати preconnect, щоб підготувати з'єднання з сервером, який надаватиме ці ресурси, ще до того, як вони будуть потрібні.`,
-          },{
+          },
+          {
             code: false,
             label: 'prerender',
             description: `Цей метод використовується для попереднього рендерингу сторінки, що дозволяє покращити її швидкість завантаження.`,
@@ -486,7 +496,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '1_28',
+        id: generateUUID(),
         question: 'Навіщо потрібен патерн PRPL?',
         descriptions: [
           {
@@ -503,11 +513,11 @@ Compositing - це процес складання відображення ст
     ],
   },
   {
-    id: 2,
+    id: generateUUID(),
     name: 'Web API',
     questions: [
       {
-        id: '2_1',
+        id: generateUUID(),
         question: 'Що таке HTTP?',
         descriptions: [
           {
@@ -527,7 +537,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_2',
+        id: generateUUID(),
         question: 'З чого будується HTTP-запит?',
         descriptions: [
           {
@@ -589,7 +599,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_3',
+        id: generateUUID(),
         question: 'Які методи може мати HTTP-запит?',
         descriptions: [
           {
@@ -709,7 +719,8 @@ Compositing - це процес складання відображення ст
           },
           {
             code: false,
-            label: '4. DELETE - видалення ресурсу на сервері за вказаною адресою.',
+            label:
+              '4. DELETE - видалення ресурсу на сервері за вказаною адресою.',
             description: `Mетод DELETE використовується для видалення ресурсу на сервері. Використовуйте метод fetch() з параметром method: 'DELETE', щоб виконати DELETE-запит:`,
           },
           {
@@ -732,7 +743,8 @@ Compositing - це процес складання відображення ст
           },
           {
             code: false,
-            label: '5. HEAD - запит на отримання заголовків відповіді, але без тіла відповіді.',
+            label:
+              '5. HEAD - запит на отримання заголовків відповіді, але без тіла відповіді.',
             description: `Метод HEAD використовується для отримання заголовків відповіді на запит без тіла відповіді. Він корисний, коли ви хочете отримати лише інформацію про ресурс, таку як тип MIME, без отримання всього вмісту ресурсу. Використовуйте метод fetch() з параметром method: 'HEAD', щоб виконати HEAD-запит:`,
           },
           {
@@ -756,7 +768,8 @@ Compositing - це процес складання відображення ст
           },
           {
             code: false,
-            label: '6. OPTIONS - запит на отримання інформації про можливості сервера для обробки запитів.',
+            label:
+              '6. OPTIONS - запит на отримання інформації про можливості сервера для обробки запитів.',
             description: `Метод OPTIONS використовується для отримання інформації про можливі методи HTTP, які підтримуються для конкретного ресурсу на сервері. Використовуйте метод fetch() з параметром method: 'OPTIONS', щоб виконати OPTIONS-запит:`,
           },
           {
@@ -811,7 +824,8 @@ Compositing - це процес складання відображення ст
           },
           {
             code: false,
-            label: '8. TRACE - запит на отримання поверхневої інформації про те, як сервер обробляє запит.',
+            label:
+              '8. TRACE - запит на отримання поверхневої інформації про те, як сервер обробляє запит.',
             description: `Метод TRACE використовується для діагностики мережевих проблем. Він дозволяє клієнту отримати зворотню інформацію від сервера про кожен крок, що відбувається з запитом, відправленим до сервера.`,
           },
           {
@@ -843,7 +857,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_4',
+        id: generateUUID(),
         question: 'Що таке HTTP cookie? Для чого їх використовують?',
         descriptions: [
           {
@@ -869,7 +883,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_5',
+        id: generateUUID(),
         question: 'Що таке WebSocket? У чому принцип його роботи?',
         descriptions: [
           {
@@ -910,7 +924,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_6',
+        id: generateUUID(),
         question: 'Різниця між HTTP та HTTPS?',
         descriptions: [
           {
@@ -931,7 +945,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_7',
+        id: generateUUID(),
         question: 'Long-Polling, Websockets та Server-Sent Events',
         descriptions: [
           {
@@ -962,7 +976,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_8',
+        id: generateUUID(),
         question: 'Різниця між PUT- і POST-запитами?',
         descriptions: [
           {
@@ -988,7 +1002,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_9',
+        id: generateUUID(),
         question: 'Що таке безпечні (Secure) та HttpOnly cookies?',
         descriptions: [
           {
@@ -1014,7 +1028,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_10',
+        id: generateUUID(),
         question: 'Що таке Content Security Policy (CSP)?',
         descriptions: [
           {
@@ -1045,7 +1059,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_11',
+        id: generateUUID(),
         question: 'XML',
         descriptions: [
           {
@@ -1066,7 +1080,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_12',
+        id: generateUUID(),
         question: 'AJAX',
         descriptions: [
           {
@@ -1087,7 +1101,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_13',
+        id: generateUUID(),
         question: 'Що таке CORS?',
         descriptions: [
           {
@@ -1107,7 +1121,8 @@ Compositing - це процес складання відображення ст
           },
           {
             code: true,
-            label: 'Ось приклад коду, який додає заголовки CORS до відповіді сервера:',
+            label:
+              'Ось приклад коду, який додає заголовки CORS до відповіді сервера:',
             description: `
               const express = require('express');
               const app = express();
@@ -1139,7 +1154,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_14',
+        id: generateUUID(),
         question: 'Різниця між протоколами TCP і UDP?',
         descriptions: [
           {
@@ -1175,7 +1190,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_15',
+        id: generateUUID(),
         question: 'Що таке Service Workers?',
         descriptions: [
           {
@@ -1200,7 +1215,8 @@ Compositing - це процес складання відображення ст
           },
           {
             code: true,
-            label: '1. Створіть файл serviceWorker.js в корені вашого проекту. У цьому файлі ви можете зареєструвати Service Worker, визначити, які ресурси повинні бути кешовані, і які події повинні бути перехоплені.',
+            label:
+              '1. Створіть файл serviceWorker.js в корені вашого проекту. У цьому файлі ви можете зареєструвати Service Worker, визначити, які ресурси повинні бути кешовані, і які події повинні бути перехоплені.',
             description: `
             // serviceWorker.js
 
@@ -1257,7 +1273,8 @@ Compositing - це процес складання відображення ст
           },
           {
             code: true,
-            label: '3. Додайте файл manifest.json у корінь вашого проекту. У цьому файлі ви можете визначити метадані про ваше додаток, такі як іконка, назва та короткий опис.',
+            label:
+              '3. Додайте файл manifest.json у корінь вашого проекту. У цьому файлі ви можете визначити метадані про ваше додаток, такі як іконка, назва та короткий опис.',
             description: `
             // manifest.json
 
@@ -1286,7 +1303,8 @@ Compositing - це процес складання відображення ст
           },
           {
             code: true,
-            label: '4. Додайте посилання на ваш файл маніфесту у вашому HTML-файлі.',
+            label:
+              '4. Додайте посилання на ваш файл маніфесту у вашому HTML-файлі.',
             description: `
             <!-- index.html -->
 
@@ -1311,7 +1329,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_16',
+        id: generateUUID(),
         question: 'Що таке Web Worklet?',
         descriptions: [
           {
@@ -1332,7 +1350,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_17',
+        id: generateUUID(),
         question: 'Що таке History API в браузері?',
         descriptions: [
           {
@@ -1358,7 +1376,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_18',
+        id: generateUUID(),
         question: 'що таке веб-сховище (web storage)?',
         descriptions: [
           {
@@ -1399,7 +1417,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_19',
+        id: generateUUID(),
         question: 'Що таке sessionStorage?',
         descriptions: [
           {
@@ -1437,7 +1455,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_20',
+        id: generateUUID(),
         question: 'Що таке BOM?',
         descriptions: [
           {
@@ -1458,7 +1476,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_21',
+        id: generateUUID(),
         question: 'Різниця між cookie, sessionStorage та localStorage?',
         descriptions: [
           {
@@ -1489,7 +1507,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_22',
+        id: generateUUID(),
         question: 'Що таке REST та RESTful api?',
         descriptions: [
           {
@@ -1577,7 +1595,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '2_23',
+        id: generateUUID(),
         question: 'Що таке Triple handshake?',
         descriptions: [
           {
@@ -1604,174 +1622,174 @@ Compositing - це процес складання відображення ст
       },
     ],
   },
-  // {
-  //   id: 2,
-  //   name: 'Git',
-  //   questions: [
-  //     {
-  //       id: '2_1',
-  //       question: 'question 1',
-  //       descriptions: [
-  //         {
-  //           code: false,
-  //           label: 'What is DNS?',
-  //           description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-  //           Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
-  //         },
-  //         {
-  //           code: false,
-  //           label: 'How does DNS work?',
-  //           description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-  //           In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
-  //         },
-  //         {
-  //           code: true,
-  //           label: 'Code',
-  //           description: `
-  //             import { useEffect, useState } from 'react';
-  //             import { Module, Question } from '../interfaces';
-              
-  //             const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-  //               const [result, setResult] = useState<Module | Question | null>(null);
-              
-  //               const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-  //                   for (let i = 0; i < array.length; i++) {
-  //                     const obj = array[i];
-  //                     if ("questions" in obj) {
-  //                       const moduleObj = obj as Module;
-  //                       getObjectById(moduleObj.questions, idForSearch);
-  //                     }
-  //                     if (obj.id === idForSearch) {
-  //                       setResult(obj as Module | Question);
-  //                       break;
-  //                     }
-  //                   }
-  //                 }
-              
-  //               useEffect(() => {
-  //                 getObjectById(array, id);
-  //               }, [array, id]);
-              
-  //               return result;
-  //             };
-              
-  //             export default useGetObjectById;
-  //           `,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       id: '2_2',
-  //       question: 'question 2',
-  //       descriptions: [
-  //         {
-  //           code: false,
-  //           label: 'What is DNS?',
-  //           description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-  //           Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
-  //         },
-  //         {
-  //           code: false,
-  //           label: 'How does DNS work?',
-  //           description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-  //           In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
-  //         },
-  //         {
-  //           code: true,
-  //           label: 'Code',
-  //           description: `
-  //             import { useEffect, useState } from 'react';
-  //             import { Module, Question } from '../interfaces';
-              
-  //             const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-  //               const [result, setResult] = useState<Module | Question | null>(null);
-              
-  //               const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-  //                   for (let i = 0; i < array.length; i++) {
-  //                     const obj = array[i];
-  //                     if ("questions" in obj) {
-  //                       const moduleObj = obj as Module;
-  //                       getObjectById(moduleObj.questions, idForSearch);
-  //                     }
-  //                     if (obj.id === idForSearch) {
-  //                       setResult(obj as Module | Question);
-  //                       break;
-  //                     }
-  //                   }
-  //                 }
-              
-  //               useEffect(() => {
-  //                 getObjectById(array, id);
-  //               }, [array, id]);
-              
-  //               return result;
-  //             };
-              
-  //             export default useGetObjectById;
-  //           `,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       id: '2_3',
-  //       question: 'question 3',
-  //       descriptions: [
-  //         {
-  //           code: false,
-  //           label: 'What is DNS?',
-  //           description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-  //           Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
-  //         },
-  //         {
-  //           code: false,
-  //           label: 'How does DNS work?',
-  //           description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-  //           In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
-  //         },
-  //         {
-  //           code: true,
-  //           label: 'Code',
-  //           description: `
-  //             import { useEffect, useState } from 'react';
-  //             import { Module, Question } from '../interfaces';
-              
-  //             const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-  //               const [result, setResult] = useState<Module | Question | null>(null);
-              
-  //               const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-  //                   for (let i = 0; i < array.length; i++) {
-  //                     const obj = array[i];
-  //                     if ("questions" in obj) {
-  //                       const moduleObj = obj as Module;
-  //                       getObjectById(moduleObj.questions, idForSearch);
-  //                     }
-  //                     if (obj.id === idForSearch) {
-  //                       setResult(obj as Module | Question);
-  //                       break;
-  //                     }
-  //                   }
-  //                 }
-              
-  //               useEffect(() => {
-  //                 getObjectById(array, id);
-  //               }, [array, id]);
-              
-  //               return result;
-  //             };
-              
-  //             export default useGetObjectById;
-  //           `,
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
   {
-    id: 3,
+    id: generateUUID(),
+    name: 'Git',
+    questions: [
+      {
+        id: generateUUID(),
+        question: 'question 1',
+        descriptions: [
+          {
+            code: false,
+            label: 'What is DNS?',
+            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
+            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+          },
+          {
+            code: false,
+            label: 'How does DNS work?',
+            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
+            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+          },
+          {
+            code: true,
+            label: 'Code',
+            description: `
+              import { useEffect, useState } from 'react';
+              import { Module, Question } from '../interfaces';
+              
+              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
+                const [result, setResult] = useState<Module | Question | null>(null);
+              
+                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
+                    for (let i = 0; i < array.length; i++) {
+                      const obj = array[i];
+                      if ("questions" in obj) {
+                        const moduleObj = obj as Module;
+                        getObjectById(moduleObj.questions, idForSearch);
+                      }
+                      if (obj.id === idForSearch) {
+                        setResult(obj as Module | Question);
+                        break;
+                      }
+                    }
+                  }
+              
+                useEffect(() => {
+                  getObjectById(array, id);
+                }, [array, id]);
+              
+                return result;
+              };
+              
+              export default useGetObjectById;
+            `,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'question 2',
+        descriptions: [
+          {
+            code: false,
+            label: 'What is DNS?',
+            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
+            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+          },
+          {
+            code: false,
+            label: 'How does DNS work?',
+            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
+            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+          },
+          {
+            code: true,
+            label: 'Code',
+            description: `
+              import { useEffect, useState } from 'react';
+              import { Module, Question } from '../interfaces';
+              
+              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
+                const [result, setResult] = useState<Module | Question | null>(null);
+              
+                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
+                    for (let i = 0; i < array.length; i++) {
+                      const obj = array[i];
+                      if ("questions" in obj) {
+                        const moduleObj = obj as Module;
+                        getObjectById(moduleObj.questions, idForSearch);
+                      }
+                      if (obj.id === idForSearch) {
+                        setResult(obj as Module | Question);
+                        break;
+                      }
+                    }
+                  }
+              
+                useEffect(() => {
+                  getObjectById(array, id);
+                }, [array, id]);
+              
+                return result;
+              };
+              
+              export default useGetObjectById;
+            `,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'question 3',
+        descriptions: [
+          {
+            code: false,
+            label: 'What is DNS?',
+            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
+            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+          },
+          {
+            code: false,
+            label: 'How does DNS work?',
+            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
+            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+          },
+          {
+            code: true,
+            label: 'Code',
+            description: `
+              import { useEffect, useState } from 'react';
+              import { Module, Question } from '../interfaces';
+              
+              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
+                const [result, setResult] = useState<Module | Question | null>(null);
+              
+                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
+                    for (let i = 0; i < array.length; i++) {
+                      const obj = array[i];
+                      if ("questions" in obj) {
+                        const moduleObj = obj as Module;
+                        getObjectById(moduleObj.questions, idForSearch);
+                      }
+                      if (obj.id === idForSearch) {
+                        setResult(obj as Module | Question);
+                        break;
+                      }
+                    }
+                  }
+              
+                useEffect(() => {
+                  getObjectById(array, id);
+                }, [array, id]);
+              
+                return result;
+              };
+              
+              export default useGetObjectById;
+            `,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: generateUUID(),
     name: 'HTML',
     questions: [
       {
-        id: '3_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [
           {
@@ -1823,7 +1841,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '3_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [
           {
@@ -1875,7 +1893,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '3_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [
           {
@@ -1929,11 +1947,11 @@ Compositing - це процес складання відображення ст
     ],
   },
   {
-    id: 4,
+    id: generateUUID(),
     name: 'CSS',
     questions: [
       {
-        id: '4_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [
           {
@@ -1985,7 +2003,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '4_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [
           {
@@ -2037,7 +2055,7 @@ Compositing - це процес складання відображення ст
         ],
       },
       {
-        id: '4_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [
           {
@@ -2091,168 +2109,168 @@ Compositing - це процес складання відображення ст
     ],
   },
   {
-    id: 5,
+    id: generateUUID(),
     name: 'Princeples',
     questions: [
       {
-        id: '5_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [],
       },
       {
-        id: '5_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [],
       },
       {
-        id: '5_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [],
       },
     ],
   },
   {
-    id: 6,
+    id: generateUUID(),
     name: 'ES5+, JavaScript',
     questions: [
       {
-        id: '6_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [],
       },
       {
-        id: '6_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [],
       },
       {
-        id: '6_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [],
       },
     ],
   },
   {
-    id: 7,
+    id: generateUUID(),
     name: 'Webpack, Babel',
     questions: [
       {
-        id: '7_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [],
       },
       {
-        id: '7_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [],
       },
       {
-        id: '7_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [],
       },
     ],
   },
   {
-    id: 8,
+    id: generateUUID(),
     name: 'Configuration project',
     questions: [
       {
-        id: '8_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [],
       },
       {
-        id: '8_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [],
       },
       {
-        id: '8_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [],
       },
     ],
   },
   {
-    id: 9,
+    id: generateUUID(),
     name: 'React JS',
     questions: [
       {
-        id: '9_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [],
       },
       {
-        id: '9_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [],
       },
       {
-        id: '9_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [],
       },
     ],
   },
   {
-    id: 10,
+    id: generateUUID(),
     name: 'Testing',
     questions: [
       {
-        id: '10_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [],
       },
       {
-        id: '10_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [],
       },
       {
-        id: '10_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [],
       },
     ],
   },
   {
-    id: 11,
+    id: generateUUID(),
     name: 'Metodologies',
     questions: [
       {
-        id: '11_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [],
       },
       {
-        id: '11_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [],
       },
       {
-        id: '11_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [],
       },
     ],
   },
   {
-    id: 12,
+    id: generateUUID(),
     name: 'Practical  part',
     questions: [
       {
-        id: '12_1',
+        id: generateUUID(),
         question: 'question 1',
         descriptions: [],
       },
       {
-        id: '12_2',
+        id: generateUUID(),
         question: 'question 2',
         descriptions: [],
       },
       {
-        id: '12_3',
+        id: generateUUID(),
         question: 'question 3',
         descriptions: [],
       },
