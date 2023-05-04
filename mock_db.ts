@@ -1950,53 +1950,252 @@ pick 3ab5683 Added feature 3`,
     questions: [
       {
         id: generateUUID(),
-        question: 'question 1',
+        question: 'Що таке CSS? І навіщо він використовується?',
         descriptions: [
           {
             code: false,
-            label: 'What is DNS?',
-            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
+            label: 'CSS',
+            description: `CSS (Cascading Style Sheets) - це мова опису стилів, яка використовується для оформлення веб-сторінок.`,
           },
           {
             code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
+            label: '',
+            description: `CSS дозволяє відокремлювати опис зовнішнього вигляду веб-сторінки від її HTML-структури та логіки. За допомогою CSS можна задавати кольори, шрифти, розміри, межі, відступи, вирівнювання та інші властивості елементів на сторінці.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке CSS-правило?',
+        descriptions: [
+          {
+            code: false,
+            label: 'CSS-правило',
+            description: `
+CSS-правило (іноді його називають CSS-декларацією) - це основна одиниця стилю в CSS, яка визначає зовнішній вигляд певного елемента на веб-сторінці.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Кожне CSS-правило складається з двох основних частин: селектора та оголошення стилів. Селектор вказує на те, які елементи HTML на сторінці повинні бути стилізовані, а оголошення стилів містить властивості та їх значення, які задають зовнішній вигляд цих елементів.`,
           },
           {
             code: true,
-            label: 'Code',
+            label: 'Ось приклад CSS-правила:',
+            description: `p {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+}`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Варіанти додавання CSS стилів на сторінку?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Є кілька способів додавання CSS стилів на сторінку веб-сайту:',
+            description: `1.Внутрішній CSS: можна включити CSS-стилі безпосередньо в тег head HTML-документу за допомогою тегу style`,
+          },
+          {
+            code: true,
+            label: '',
             description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
-            `,
+<head>
+  <style>
+    body {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `2. Зовнішній CSS: CSS можна зберігати у відокремленому файлі з розширенням .css, який повинен бути підключений до HTML-документу за допомогою тегу link`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+<head>
+  <link rel="stylesheet" type="text/css" href="">
+</head>`,
+          },{
+            code: false,
+            label: '',
+            description: `3. Inline CSS: можна додавати стилі безпосередньо до HTML-елементів за допомогою атрибуту   `,
+          },
+          {
+            code: true,
+            label: '',
+            description: `
+<h1 style="color: blue;">Це заголовок сторінки</h1>
+`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Типи позиціонування у CSS?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Static',
+            description: `Static: це тип позиціонування за замовчуванням для кожного HTML-елемента. Елементи з позиціонуванням Static розміщуються в документі так, як вони повинні бути відображені без будь-якої додаткової обробки.`,
+          },{
+            code: false,
+            label: 'Relative',
+            description: `Relative: це тип позиціонування, в якому елемент зсувається відносно своєї початкової позиції в залежності від заданого значення властивості top, bottom, left або right. З іншого боку, навіть якщо елемент зсунутий, його місце залишається зарезервованим у потоці документу, тому сусідні елементи не зміщуються.`,
+          },{
+            code: false,
+            label: 'Absolute',
+            description: `Absolute: це тип позиціонування, в якому елемент відноситься до свого найближчого "пріоритетного" елемента з непорожнім значенням властивості position (може бути родичем або предком). Елемент з позиціонуванням Absolute встановлюється в конкретну позицію на сторінці відносно своїх пріоритетних елементів або відносно вікна браузера, якщо він не має пріоритетних елементів. Це зазвичай використовується для розміщення елементів у плаваючому вікні.`,
+          },{
+            code: false,
+            label: 'Fixed',
+            description: `Крім цих трьох типів позиціонування, у CSS є ще четвертий тип - Fixed, який працює подібно до Absolute, але елемент розміщується відносно вікна браузера, а не відносно інших елементів. Це корисно для створення елементів, які завжди залишаються на одному місці на сторінці, незалежно від того, як користувач прокручує сторінку.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Блокова модель CSS?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Блокова модель CSS',
+            description: `Блокова модель CSS - це спосіб визначення та обробки розмірів та просторів HTML-елементів в CSS. Вона описує, як браузер визначає розміри та простори елемента на сторінці, включаючи вміст, відступи, рамки та поля.`,
+          }, {
+            code: false,
+            label: '',
+            description: `Загальний принцип блокової моделі полягає у тому, що кожен HTML-елемент може бути представлений як прямокутник, який складається з чотирьох складових:`,
+          },{
+            code: false,
+            label: '',
+            description: `Контент (content): це вміст елемента, який міститься в середині рамки.
+Відступ (padding): це простір між контентом та рамкою.
+Рамка (border): це лінія, яка оточує контент та відступ.
+Поле (margin): це простір між рамкою та сусідніми елементами.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке селектор? І які селектори є?',
+        descriptions: [
+          {
+            code: false,
+            label: 'CSS селектор',
+            description: `У CSS, селектор - це патерн, який вказує, які HTML-елементи мають бути вибрані та стилізовані. Селектори дозволяють вибирати один або більше HTML-елементів на сторінці та застосовувати до них один або більше стилів.`,
+          },{
+            code: false,
+            label: 'CSS селектор бувають:',
+            description: `Селектор елемента: вибирає всі елементи певного типу, наприклад, всі <p> або всі <div>.
+
+Селектор класу: вибирає всі елементи, які мають певний клас, визначений у HTML-коді за допомогою атрибуту class. Селектор класу починається з крапки (.), а за нею слідує назва класу.
+
+Селектор ID: вибирає елемент з певним ID, визначеним у HTML-коді за допомогою атрибуту id. Селектор ID починається з хеш-символу (#), а за ним слідує назва ID.
+
+Селектор дочірнього елемента: вибирає елемент, який є нащадком певного елемента, наприклад, всі <li> елементи, які знаходяться всередині <ul> елемента.
+
+Селектор взаємодії (hover): використовується для визначення стилю, який має бути застосований до елемента, коли на нього наведено курсор.
+
+Селектор атрибута: вибирає всі елементи з певним значенням атрибуту, наприклад, всі елементи з атрибутом href.
+
+Селектор комбінатора: поєднує два або більше селектори, щоб вибрати елементи, які відповідають обом умовам. Наприклад, селектор div p вибирає всі <p> елементи, які знаходяться всередині <div> елемента.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке специфіка селектора? Як рахувати вагу селектора?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Що таке специфіка селектора?',
+            description: `Специфіка селектора в CSS - це показник того, як сильно впливає селектор на елементи, які він вибирає. Специфіка селектора визначає, який з однакових стилів застосується до елемента, якщо було вказано декілька селекторів, які відповідають йому. Селектор з більшою специфікою має вищий пріоритет.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Різниця між Reset.css та Normalize.css?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Reset.css',
+            description: `Reset.css - це файл стилів, який зазвичай включається в початок CSS файлу і має на меті повністю скинути всі початкові значення CSS стилів для HTML елементів на сторінці. Це дозволяє вам почати з чистого стану, створюючи зовнішній вигляд з нуля. Однак, такі скидання можуть бути дуже радикальними і виникнуть проблеми з сумісністю між браузерами. Зазвичай, при використанні Reset.css потрібно вручну налаштувати всі елементи.`,
+          },
+          {
+            code: false,
+            label: 'Normalize.css',
+            description: `Normalize.css - це інший файл стилів, який зазвичай включається в початок CSS файлу. Основна ідея Normalize.css полягає в тому, щоб стандартизувати вигляд HTML елементів в різних браузерах, зберігаючи при цьому їх звичайний вигляд. Normalize.css не скидає початкові значення CSS стилів, а замінює їх на більш стандартні значення, які будуть однаковими у всіх браузерах. Це допомагає зменшити проблеми з сумісністю між браузерами та спрощує налаштування стилів.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `Отже, відмінність між Reset.css та Normalize.css полягає у тому, що Reset.css скидає всі початкові значення CSS стилів для HTML елементів на сторінці, тоді як Normalize.css стандартизує їх вигляд.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Різниця між margin та padding?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Margin',
+            description: `Margin - це відстань між зовнішнім краєм елемента та іншими елементами на сторінці. Якщо розмір маргіну позитивний, то він збільшить відстань між елементами, якщо від'ємний - то зменшить. Маргін не включається в розмір елемента, тому коли ми встановлюємо маргін, то це впливає тільки на відстань між елементами, а не на їх розмір.`,
+          },{
+            code: false,
+            label: 'Padding',
+            description: `Padding - це відстань між внутрішнім краєм елемента та його вмістом. Якщо розмір padding позитивний, то він збільшить відстань між вмістом елемента та його рамкою, якщо від'ємний - то зменшить. Padding включається в розмір елемента, тому коли ми встановлюємо padding, то це впливає на розмір елемента.`,
+          },{
+            code: false,
+            label: 'Різниця між margin та padding',
+            description: `Отже, різниця між margin та padding полягає у тому, що margin визначає відстань між зовнішнім краєм елемента та іншими елементами, тоді як padding визначає відстань між внутрішнім краєм елемента та його вмістом. Також важливо зазначити, що margin не включається в розмір елемента, тоді як padding включається.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Різниця між display: none та visibility: hidden?',
+        descriptions: [
+          {
+            code: false,
+            label: 'display: none',
+            description: `Коли ми встановлюємо display: none, елемент повністю видаляється з потоку документа і стає недоступним для користувача. Це означає, що елемент не займає місце на сторінці, не має висоти та ширини, і не можна взаємодіяти з його вмістом. Якщо елемент має дочірні елементи, вони також будуть приховані.`,
+          },
+          {
+            code: false,
+            label: 'visibility: hidden',
+            description: `У випадку з visibility: hidden, елемент залишається в потоці документа, і займає той самий обсяг місця, що й до того. Але елемент і його вміст стає невидимим для користувача. Таким чином, хоча елемент не взаємодіє з користувачем, місце на сторінці, яке він займає, все ще резервується.`,
+          },{
+            code: false,
+            label: 'Різниця між display: none та visibility: hidden?',
+            description: `Отже, головна різниця між display: none та visibility: hidden полягає у тому, що display: none повністю видаляє елемент з потоку документа, в той час як visibility: hidden зберігає місце на сторінці, яке займе елемент.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Різниця між блоковим та малим (інлайновим) елементами?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Блокові елементи',
+            description: `Блокові елементи - це елементи, які займають всю доступну ширину батьківського контейнера, і завжди починаються з нового рядка. Тобто, якщо ми маємо декілька блокових елементів в одному рядку, кожен з них почне новий рядок. За замовчуванням, блокові елементи мають ширину 100%, і можуть мати встановлену висоту, поля (margin) та відступи (padding).`,
+          },{
+            code: false,
+            label: 'Інлайнові елементи',
+            description: `Інлайнові елементи (малі) - це елементи, які займають тільки той простір, який потрібний для їх вмісту. Вони не починають новий рядок, і можуть знаходитись поруч з іншими елементами в одному рядку. Інлайнові елементи мають ширину та висоту, що відповідає їх вмісту, і не можуть мати встановлені відступи з усіх сторін.`,
+          },{
+            code: false,
+            label: 'Різниця між блоковим та малим (інлайновим) елементами',
+            description: `Основна різниця між блоковими та інлайновими елементами полягає в тому, як вони взаємодіють з іншими елементами в рядку. Блокові елементи завжди починаються з нового рядка, тоді як інлайнові можуть знаходитись поруч з іншими елементами. Також вони мають різні значення за замовчуванням для ширини, висоти, полів та відступів. Однак, CSS дозволяє змінювати ці значення, тому блокові та інлайнові елементи можуть мати схожий вигляд, якщо вони правильно стилізовані.`,
           },
         ],
       },
@@ -2006,101 +2205,8 @@ pick 3ab5683 Added feature 3`,
         descriptions: [
           {
             code: false,
-            label: 'What is DNS?',
-            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
-          },
-          {
-            code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
-          },
-          {
-            code: true,
-            label: 'Code',
-            description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
-            `,
-          },
-        ],
-      },
-      {
-        id: generateUUID(),
-        question: 'question 3',
-        descriptions: [
-          {
-            code: false,
-            label: 'What is DNS?',
-            description: `The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
-            Each device connected to the Internet has a unique IP address which other machines use to find the device. DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).`,
-          },
-          {
-            code: false,
-            label: 'How does DNS work?',
-            description: `The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-            In order to understand the process behind the DNS resolution, it’s important to learn about the different hardware components a DNS query must pass between. For the web browser, the DNS lookup occurs "behind the scenes" and requires no interaction from the user’s computer apart from the initial request.`,
-          },
-          {
-            code: true,
-            label: 'Code',
-            description: `
-              import { useEffect, useState } from 'react';
-              import { Module, Question } from '../interfaces';
-              
-              const useGetObjectById = ( array: (Question | Module)[], id : string): Module | Question | null => {
-                const [result, setResult] = useState<Module | Question | null>(null);
-              
-                const getObjectById = (array: (Question | Module)[], idForSearch: string): void => {
-                    for (let i = 0; i < array.length; i++) {
-                      const obj = array[i];
-                      if ("questions" in obj) {
-                        const moduleObj = obj as Module;
-                        getObjectById(moduleObj.questions, idForSearch);
-                      }
-                      if (obj.id === idForSearch) {
-                        setResult(obj as Module | Question);
-                        break;
-                      }
-                    }
-                  }
-              
-                useEffect(() => {
-                  getObjectById(array, id);
-                }, [array, id]);
-              
-                return result;
-              };
-              
-              export default useGetObjectById;
-            `,
+            label: '',
+            description: ``,
           },
         ],
       },
