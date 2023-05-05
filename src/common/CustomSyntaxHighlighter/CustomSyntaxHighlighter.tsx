@@ -16,7 +16,7 @@ interface CustomSyntaxHighlighterProps {
 const CustomSyntaxHighlighter: FC<CustomSyntaxHighlighterProps> = ({
   codeString,
 }): JSX.Element => {
-  const [copy, setCopy] = useState<Boolean>(false);
+  const [copy, setCopy] = useState<boolean>(false);
 
   return (
     <>
