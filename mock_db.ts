@@ -2379,6 +2379,178 @@ CSS-правило (іноді його називають CSS-декларац�
           },
         ],
       },
+      {
+        id: generateUUID(),
+        question: 'Як за допомогою CSS визначити, чи підтримується властивість у браузері?',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: `Використання префіксів браузера. Префікси браузера - це додаткові префікси, які додаються до властивостей, які ще не стали стандартними. Наприклад, якщо ви хочете використовувати властивість "flexbox", яка не підтримується в старіших версіях браузерів, ви можете використовувати наступний код: `,
+          },{
+            code: true,
+            label: '',
+            description: `display: -webkit-flex; /* Safari */
+             display: flex; /* стандарт */`,
+          },{
+            code: false,
+            label: '',
+            description: `Використання @supports. @supports - це CSS-правило, яке дозволяє вам перевірити, чи підтримує браузер певну властивість. Наприклад, якщо ви хочете перевірити, чи підтримує браузер властивість "display: flex", ви можете використовувати наступний код:`,
+          },
+          {
+            code: true,
+            label: '',
+            description: `@supports (display: flex) {
+  /* CSS-правила, які виконуються, якщо браузер підтримує властивість flex */}`,
+          },{
+            code: false,
+            label: '',
+            description: `Використання Modernizr. Modernizr - це JavaScript-бібліотека, яка дозволяє перевірити, чи підтримує браузер певні CSS-властивості. Щоб використовувати Modernizr, ви повинні включити бібліотеку на своїй сторінці і додати класи до елементів залежно від того, чи підтримує браузер певну властивість. Наприклад:`,
+          },{
+            code: true,
+            label: '',
+            description: `if (Modernizr.flexbox) {
+  // Якщо браузер підтримує властивість flexbox
+} else {
+  // Якщо браузер не підтримує властивість flexbox}`,
+          }
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Як підтримувати сторінки в браузерах з обмеженими функціями?',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
     ],
   },
   {
