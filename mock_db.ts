@@ -4480,13 +4480,13 @@ CSS має низку фільтрів, які можуть бути засто�
             label: '',
             description: `За допомогою Styled Components можна описувати стилі для компонентів, використовуючи техніку CSS-in-JS. Це означає, що стилі компонентів пишуться за допомогою спеціальної синтаксичної нотації, яка дозволяє вбудовувати змінні, обчислення та інші функції в стилі.`,
           },{
-            code: false,
+            code: true,
             label: 'Наприклад, опис стилів для кнопки з використанням Styled Components може виглядати наступним чином:',
             description: `import styled from 'styled-components';
 
 const Button = styled.button\`
-  background-color: ${props => props.primary ? 'blue' : 'white'};
-  color: ${props => props.primary ? 'white' : 'blue'};
+  background-color: $ {props => props.primary ? 'blue' : 'white'};
+  color: $ {props => props.primary ? 'white' : 'blue'};
   border: 2px solid blue;
   border-radius: 4px;
   font-size: 16px;
