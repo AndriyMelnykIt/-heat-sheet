@@ -5679,6 +5679,354 @@ export default Button;`,
   },
   {
     id: generateUUID(),
+    name: 'TypeScript',
+    questions: [
+      {
+        id: generateUUID(),
+        question: 'Що таке TypeScript?',
+        descriptions: [
+          {
+            code: false,
+            label: 'TypeScript',
+            description: `TypeScript - це мова програмування, яка є строго типізованою версією JavaScript.`,
+          },{
+            code: false,
+            label: '',
+            description: `Однією з головних переваг TypeScript є можливість виявлення помилок під час компіляції, що дозволяє позбутися багатьох потенційних помилок в коді ще до його виконання. Крім того, TypeScript дозволяє зберігати код більш структурованим і організованим, що полегшує розробку і підтримку програм в майбутньому.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Основні компоненти TypeScript?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Основні компоненти TypeScript, які варто знати, це:',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: `1. Синтаксис: TypeScript використовує синтаксис, який є розширенням синтаксису JavaScript. Це означає, що TypeScript включає всі функції JavaScript, а також додає нові функції, такі як типи даних, інтерфейси, декоратори та інші.`,
+          },{
+            code: false,
+            label: '',
+            description: `2. Компілятор: TypeScript поставляється з компілятором, який перетворює TypeScript-код у JavaScript-код, який може бути виконаний у браузері або на сервері. Компілятор дозволяє налаштувати TypeScript-код на конкретних потребах проекту та перетворювати його на JavaScript.`,
+          },{
+            code: false,
+            label: '',
+            description: `3. Визначення типів: TypeScript є строго типізованою мовою, що означає, що розробник повинен визначити тип кожної змінної, аргументу та поверненого значення функції. Це допомагає уникнути помилок, пов'язаних з неправильними типами даних, що можуть виникнути під час виконання програми.`,
+          },{
+            code: false,
+            label: '',
+            description: `4. Інтерфейси: TypeScript підтримує інтерфейси, які дозволяють розробникам описувати структуру об'єктів. Інтерфейси використовуються для забезпечення типової безпеки в коді та для документування API.`,
+          },{
+            code: false,
+            label: '',
+            description: `5. Декоратори: TypeScript підтримує декоратори, які дозволяють додавати анотації до класів, функцій та інших конструкцій. Декоратори дозволяють розробникам додавати додаткову логіку до коду на етапі компіляції.`,
+          },{
+            code: false,
+            label: '',
+            description: `6. Модулі: TypeScript підтримує модулі, які дозволяють розробникам організовувати свій код у логічні блоки. Модулі дозволяють імпортувати та експортувати функції, класи та інші конструкції між різними файлами `,
+          },{
+            code: false,
+            label: '',
+            description: `7. Enums: TypeScript має підтримку перерахувань, які дозволяють розробникам створювати іменовані константи. Перерахування дозволяють зручно описувати набір можливих значень для змінної.`,
+          },{
+            code: false,
+            label: '',
+            description: `8. Generics: TypeScript підтримує generics, які дозволяють розробникам створювати загальні класи та функції, які можуть працювати з різними типами даних. Generics дозволяють зменшити дублювання коду та покращити його читабельність.`,
+          },{
+            code: false,
+            label: '',
+            description: `9. Неймспейси: TypeScript підтримує неймспейси, які дозволяють розробникам групувати пов'язані об'єкти, змінні та функції в одному місці. Це дозволяє зменшити конфлікти назв та полегшити організацію коду.`,
+          },{
+            code: false,
+            label: '',
+            description: `10. Міжплатформні можливості: TypeScript підтримує розробку коду для різних платформ, таких як браузери та сервери. TypeScript може бути використаний для розробки Node.js додатків та додатків для браузера з використанням бібліотек, таких як React та Angular.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Особливості TypeScript?',
+        descriptions: [
+          {
+            code: false,
+            label: 'TypeScript має кілька особливостей, які роблять його корисним інструментом для розробки програмного забезпечення. Ось кілька з них:',
+            description: `1. Строга типізація: TypeScript використовує строгу типізацію, що дозволяє виявляти помилки ще до виконання програми, забезпечуючи вищу надійність і підтримуваність коду.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `2. Класи і інтерфейси: TypeScript підтримує класи та інтерфейси, що дозволяє розробникам створювати код більш організованим та легким для розуміння.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `3. Перелічення: TypeScript дозволяє використовувати перелічення, що дозволяє вказати допустимі значення для змінної.`,
+          },
+          {
+            code: false,
+            label: '',
+            description: `4. Збірка модулів: TypeScript дозволяє розробникам організовувати свій код у модулі, що сприяє легшій підтримці і використанню коду.`,
+          },{
+            code: false,
+            label: '',
+            description: `5. Короткий час компіляції: TypeScript компілюється у звичайний JavaScript, що дозволяє зберігати час на відлагодженні і розгортанні коду.`,
+          },{
+            code: false,
+            label: '',
+            description: `6. Підтримка ES6 та новіші версії JavaScript: TypeScript підтримує нові функції та синтаксис, які додані у JavaScript після ES6, такі як async/await, стрілкові функції та інші.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Мінуси використання TypeScript?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Незважаючи на численні переваги, TypeScript також має свої недоліки, серед яких:',
+            description: `1. Великий поріг входження: TypeScript потребує від розробників знань виключної синтаксичної сумісності з JavaScript та додаткових знань про типи даних, що може бути важким для початківців.`,
+          },{
+            code: false,
+            label: '',
+            description: `2. Додаткові витрати на розробку: TypeScript може збільшити час та витрати на розробку, оскільки вимагає додаткового часу на написання додаткового коду для визначення типів даних.`,
+          },{
+            code: false,
+            label: '',
+            description: `3. Додаткова обробка на етапі компіляції: TypeScript потребує додаткової обробки на етапі компіляції, що може призвести до збільшення часу компіляції та збільшення розміру вихідного коду.`,
+          },{
+            code: false,
+            label: '',
+            description: `4. Необов'язкове використання: TypeScript є додатковим інструментом, тому його використання не є обов'язковим, що може призвести до того, що деякі розробники можуть не використовувати його, що ускладнює розробку та підтримку коду.`,
+          },{
+            code: false,
+            label: '',
+            description: `5. Додаткова навантаження на процесор: TypeScript потребує додаткового часу та ресурсів процесора для обробки типів даних, що може призвести до зменшення продуктивності виконання коду.`,
+          }
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Які є типи у TypeScript?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Типи у TypeScript',
+            description: `1. number - числовий тип даних (наприклад, 1, 2.5, -3).`,
+          },{
+            code: false,
+            label: '',
+            description: `2. string - рядковий тип даних (наприклад, "Hello, world!", '123').`,
+          },{
+            code: false,
+            label: '',
+            description: `3. boolean - логічний тип даних (true або false).`,
+          },{
+            code: false,
+            label: '',
+            description: `4. null та undefined - спеціальні значення, які використовуються для відсутності значення.`,
+          },{
+            code: false,
+            label: '',
+            description: `5. object - тип даних, що представляє об'єкти JavaScript (наприклад, {name: "John", age: 30}).`,
+          },{
+            code: false,
+            label: '',
+            description: `6. array - тип даних, який представляє масиви (наприклад, [1, 2, 3], ['a', 'b', 'c']).`,
+          },{
+            code: false,
+            label: '',
+            description: `7. tuple - тип даних, який дозволяє вказати фіксовану кількість елементів з різними типами (наприклад, [string, number], де перший елемент масиву є рядком, а другий - числом).`,
+          },{
+            code: false,
+            label: '',
+            description: `8. enum - тип даних, який дозволяє створювати набір іменованих значень.`,
+          },{
+            code: false,
+            label: '',
+            description: `9. any - тип даних, який дозволяє присвоювати будь-яке значення.`,
+          },{
+            code: false,
+            label: '',
+            description: `10. void - тип даних, який позначає відсутність поверненого значення функцією.`,
+          },{
+            code: false,
+            label: '',
+            description: `11. never - тип даних, який позначає значення, яке ніколи не може бути створено.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке декоратори?',
+        descriptions: [
+          {
+            code: false,
+            label: 'Декоратори',
+            description: `Декоратори - це функції, які додають метадані до класів, методів або властивостей в TypeScript. Вони використовуються для зміни поведінки класу або його складових без зміни вихідного коду.`,
+          },{
+            code: false,
+            label: '',
+            description: `Декоратори можуть бути застосовані до класів, методів, властивостей і параметрів методів. Вони використовуються як функції і приймають один або два параметри: цільовий об'єкт (клас, метод, властивість або параметр) і необов'язковий ключовий об'єкт, що містить додаткові параметри для декоратора.`,
+          },{
+            code: false,
+            label: '',
+            description: `Декоратори в TypeScript є потужним інструментом, що дозволяє зробити код більш читабельним та допомагає в розробці більш складних програм. Вони також дозволяють розширити функціональність TypeScript та реалізувати різноманітні патерни проектування, такі як Dependency Injection та інші.`,
+          },{
+            code: false,
+            label: '',
+            description: `Наприклад, розглянемо клас Person, який містить метод greet, який повертає рядок привітання з іменем особи. Ми можемо додати декоратор log до методу, щоб вивести інформацію про його виклик та результат.`,
+          },{
+            code: true,
+            label: '',
+            description: `function log(target: any, name: string, descriptor: PropertyDescriptor) {
+  const original = descriptor.value;
+  descriptor.value = function(...args: any[]) {
+    console.log(\`Calling $ {name} with arguments: $ {JSON.stringify(args)}\`);
+    const result = original.apply(this, args);
+    console.log(\`Result of $ {name}: $ {JSON.stringify(result)}\`);
+    return result;
+  }
+  return descriptor;
+}
+
+class Person {
+  constructor(public name: string) {}
+
+  @log
+  greet() {
+    return \`Hello, $ {this.name}!\`;
+  }
+}
+
+const john = new Person('John');
+john.greet();
+`,
+          },{
+            code: false,
+            label: '',
+            description: `У цьому прикладі декоратор log приймає три параметри: цільовий об'єкт (клас Person), назву методу (greet) та об'єкт PropertyDescriptor. Далі він замінює оригінальний метод на нову функцію, яка виводить інформацію про виклик методу та його результат, а потім викликає оригінальний метод і повертає його результат.`,
+          },{
+            code: false,
+            label: '',
+            description: `При виклику методу greet на об'єкті john, ми побачимо наступний вивід в консолі:`,
+          },{
+            code: true,
+            label: '',
+            description: `Calling greet with arguments: []
+Result of greet: "Hello, John!"
+`,
+          },{
+            code: false,
+            label: '',
+            description: `Цей приклад демонструє, як декоратор може доповнити функціональність методу, додавши до нього метадані і додаткову логіку.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Чи підтримує TypeScript навантаження функцій?',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: `Так, TypeScript підтримує навантаження функцій (або функціональне перевантаження). Це означає, що ви можете мати кілька функцій з однаковим іменем, але з різними параметрами, типами повернення та кількістю параметрів.`,
+          },{
+            code: true,
+            label: 'Наведемо приклад функціонального перевантаження в TypeScript:',
+            description: `function foo(x: number): number;
+function foo(x: string): string;
+function foo(x: boolean): boolean;
+function foo(x: any): any {
+  if (typeof x === 'number') {
+    return x * 2;
+  } else if (typeof x === 'string') {
+    return \`Hello, $ {x}!\`;
+  } else if (typeof x === 'boolean') {
+    return !x;
+  } else {
+    return x;
+  }
+}
+
+const result1 = foo(42); // result1: number
+const result2 = foo('John'); // result2: string
+const result3 = foo(true); // result3: boolean
+`,
+          },{
+            code: false,
+            label: '',
+            description: `У цьому прикладі функція <foo> перевантажується три рази з різними параметрами: один параметр типу <number>, один параметр типу <string> та один параметр типу <boolean>. Залежно від типу переданого параметра, функція повертає різний тип даних. В результаті, ви можете викликати функцію <foo> з різними типами параметрів і отримати різний тип поверненого значення.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: '',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },{
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: generateUUID(),
     name: 'Webpack, Babel',
     questions: [
       {
