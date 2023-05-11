@@ -5965,31 +5965,244 @@ const result3 = foo(true); // result3: boolean
       },
       {
         id: generateUUID(),
-        question: '',
+        question: 'Різниця між типом (type) та інтерфейсом (interface)?',
         descriptions: [
           {
             code: false,
-            label: '',
-            description: ``,
+            label: 'В TypeScript існують дві основні конструкції для опису типів: <type> та <interface>',
+            description: `interface - це іменований набір вимог, які об'єкт повинен виконувати. Вони найчастіше використовуються для опису формату об'єктів, але можуть також використовуватися для опису функцій, масивів, класів і т. д.`,
           },{
             code: false,
             label: '',
-            description: ``,
+            description: `type - це псевдонім (alias) для іншого типу. Він найчастіше використовується для опису складних типів, які важко або неможливо описати з використанням <interface>. Також, <type> може використовуватися для створення об'єднань типів, перетину типів, аліасів для примітивних типів та т. д.`,
+          },{
+            code: false,
+            label: '',
+            description: `Основна відмінність між <interface> та <type> полягає в тому, що <interface> може бути розширеним, тоді як <type> ні. Це означає, що ви можете додавати нові вимоги до інтерфейсу, або розширювати його з використанням ключового слова <extends>, тоді як <type> неможливо розширити з використанням ключового слова <extends>.`,
+          },{
+            code: false,
+            label: '',
+            description: `Також, <interface> підтримує зведення інтерфейсів (interface merging), коли два інтерфейси з однаковим іменем автоматично об'єднуються в один. Це дозволяє розділити визначення інтерфейсу на кілька файлів і зберегти зручність роботи з кодом. <type> не підтримує зведення типів.`,
+          },{
+            code: false,
+            label: '',
+            description: `Отже, коли ви хочете описати формат об'єкту, використовуйте <interface>. Якщо ви хочете описати складний тип або створити псевдонім для іншого типу, використовуйте <type>.`,
+          },{
+            code: true,
+            label: 'Ось приклад використання interface для опису формату об\'єкту:',
+            description: `interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+const user: User = {
+  name: "John",
+  age: 30,
+  email: "john@example.com"
+}
+`,
+          },{
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми створили інтерфейс User, який вимагає наявності трьох властивостей у об'єкті: name (типу string), age (типу number) та email (типу string). Потім ми створили змінну user, яка відповідає цьому формату, тому що ми використали User як тип для цієї змінної.`,
+          },{
+            code: true,
+            label: 'А ось приклад використання type для створення псевдоніма для складного типу:',
+            description: `type Employee = {
+  name: string;
+  age: number;
+  email: string;
+  salary: number;
+}
+
+const employee: Employee = {
+  name: "Alice",
+  age: 25,
+  email: "alice@example.com",
+  salary: 50000
+}
+`,
+          },{
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми створили псевдонім Employee для складного типу, який вимагає наявності чотирьох властивостей у об'єкті: name (типу string), age (типу number), email (типу string) та salary (типу number). Потім ми створили змінну employee, яка відповідає цьому формату, тому що ми використали Employee як тип для цієї змінної.`,
           },
         ],
       },
       {
         id: generateUUID(),
-        question: '',
+        question: 'Що таке JSX у TypeScript? Які режими JSX підтримує TypeScript?',
         descriptions: [
           {
             code: false,
-            label: '',
+            label: 'JSX (JavaScript XML)',
+            description: `JSX (JavaScript XML) - це розширення синтаксису JavaScript, яке дозволяє використовувати XML-подібний синтаксис для опису інтерфейсу користувача у JavaScript-файлах.`,
+          },{
+            code: false,
+            label: 'TypeScript підтримує JSX і має два режими JSX:',
             description: ``,
           },{
             code: false,
             label: '',
-            description: ``,
+            description: `1. Режим preserve: в цьому режимі TypeScript не змінює код JSX під час компіляції, а просто перетворює його на звичайний JavaScript. Цей режим використовується за замовчуванням.`,
+          },{
+            code: false,
+            label: '',
+            description: `2. Режим react: в цьому режимі TypeScript перетворює JSX на виклики функцій React. Цей режим використовується, коли використовується бібліотека React.`,
+          },{
+            code: true,
+            label: 'Ось приклад використання JSX в TypeScript:',
+            description: `import React from 'react';
+
+interface GreetingProps {
+  name: string;
+}
+
+const Greeting = (props: GreetingProps) => {
+  return <div>Hello, {props.name}!</div>;
+}
+
+export default Greeting;
+`,
+          },{
+            code: false,
+            label: '',
+            description: `У цьому прикладі ми використовуємо JSX, щоб створити елемент div, який вітає користувача з використанням імені, переданого через властивість name. У компоненті Greeting ми використовуємо інтерфейс GreetingProps для задання типів для властивостей компонента, включаючи тип name, що є рядком.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке директиви з трьома похилими характеристиками (Triple-Slash Directives), їх типи?',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: `Директиви з трьома похилими характеристиками (Triple-Slash Directives) - це спеціальні коментарі в TypeScript, які починаються з трипохилої лінії (///) і використовуються для надання інформації компілятору TypeScript про файл або модуль. Ці директиви можуть бути розміщені в головному файлі або на початку модульного файлу. TypeScript компілятор розуміє ці директиви та використовує їх для налаштування компіляції, підключення залежностей, генерації документації тощо.`,
+          },{
+            code: false,
+            label: '',
+            description: `/// <reference path="..." />: використовується для вказівки залежностей, які потрібно включити в проект. Ця директива дозволяє включати залежності, що не є модулями, наприклад, бібліотеки JavaScript, які не мають вбудованої підтримки модулів.`,
+          },{
+            code: false,
+            label: '',
+            description: `/// <reference types="..." />: використовується для вказівки типів, які потрібно включити в проект. Ця директива дозволяє включати типи для зовнішніх бібліотек, які не мають вбудованої підтримки в TypeScript.`,
+          },{
+            code: false,
+            label: '',
+            description: `/// <reference lib="..." />: використовується для включення бібліотеки типів, що містить різноманітні типові оголошення, які використовуються в проекті. Ця директива дозволяє включати певні типи, які використовуються в проекті, наприклад, типи для роботи з промісами або типи для роботи з масивами.`,
+          },{
+            code: false,
+            label: '',
+            description: `/// <amd-module />: використовується для позначення модуля як AMD-модуля. Ця директива дозволяє включати TypeScript-модулі в проекти, які використовують AMD-завантажувач.`,
+          },{
+            code: false,
+            label: '',
+            description: `/// <esModuleInterop /> використовується в TypeScript для налаштування підтримки інтероперації модулів ES та CommonJS.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке зовнішні оголошення змінних (ambient declaration) у TypeScript?',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: `Зовнішні оголошення змінних (ambient declaration) - це механізм, що дозволяє оголошувати типи для коду, який не написаний на TypeScript.`,
+          },{
+            code: false,
+            label: '',
+            description: `Зовнішнє оголошення змінної містить ключове слово declare, після якого йде оголошення змінної, функції, класу, інтерфейсу тощо. Оголошення містить лише типи, а не реалізацію.`,
+          },{
+            code: true,
+            label: 'Ось приклад зовнішнього оголошення змінної для функції fetch():',
+            description: `declare function fetch(input: RequestInfo, init?: RequestInit): Promise<Response>;`,
+          },{
+            code: false,
+            label: '',
+            description: `Це дозволяє нам використовувати функцію fetch() у TypeScript, незалежно від того, чи була вона написана на TypeScript чи на JavaScript. Також, під час компіляції TypeScript не буде перевіряти реалізацію fetch(), але будуть перевірені типи, що зазначені в зовнішньому оголошенні.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Різниця між абстрактним класом (abstract class) та інтерфейсом (interface)?',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: `Інтерфейс (interface) та абстрактний клас (abstract class) є двома різними засобами абстракції, які забезпечують структуру та типізацію коду в TypeScript. Основна різниця між ними полягає в тому, що інтерфейси описують поведінку або контракти, тоді як абстрактні класи містять реалізацію.`,
+          },{
+            code: false,
+            label: 'Інтерфейс (interface):',
+            description: `Описує форму об'єкта.`,
+          },{
+            code: false,
+            label: '',
+            description: `Може містити лише оголошення методів, властивостей, індексів та конструкторів.`,
+          },{
+            code: false,
+            label: '',
+            description: `Не може містити реалізацію.`,
+          },{
+            code: false,
+            label: '',
+            description: `Не може мати модифікаторів доступу, таких як public, private, protected.`,
+          },{
+            code: false,
+            label: '',
+            description: `Може наслідувати інші інтерфейси.`,
+          },{
+            code: false,
+            label: '',
+            description: `Може бути реалізований класами та об'єктами.`,
+          },{
+            code: true,
+            label: 'Ось приклад інтерфейсу:',
+            description: `interface Shape {
+  color: string;
+  getArea(): number;
+}
+`,
+          },{
+            code: false,
+            label: 'Абстрактний клас (abstract class):',
+            description: `Описує базову реалізацію класу, яку можна успадкувати та розширити.`,
+          },{
+            code: false,
+            label: '',
+            description: `Може містити оголошення методів, властивостей та конструкторів, які можуть бути перевизначені у дочірніх класах.`,
+          },{
+            code: false,
+            label: '',
+            description: `Може містити абстрактні методи, які потрібно реалізувати у дочірніх класах.`,
+          },{
+            code: false,
+            label: '',
+            description: `Може мати модифікатори доступу, такі як public, private, protected.`,
+          },{
+            code: false,
+            label: '',
+            description: `Не може бути створений окремо, ми можемо створювати лише його дочірні класи.`,
+          },{
+            code: false,
+            label: '',
+            description: `Може бути успадкований.`,
+          },{
+            code: true,
+            label: 'Ось приклад абстрактного класу:',
+            description: `abstract class Animal {
+  constructor(public name: string) {}
+
+  abstract makeSound(): void;
+
+  move(distanceInMeters: number = 0) {
+    console.log(\`$ {this.name} moved $ {distanceInMeters}m.\`);
+  }
+}
+`,
           },
         ],
       },
