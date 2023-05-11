@@ -25,7 +25,12 @@ const ModuleAccordion: FC<Props> = ({ module }): JSX.Element => {
         <Typography>{module.name}</Typography>
       </AccordionSummary>
       <AccordionDetails className={styles.question__tile}>
-        {module.questions.map(question => <Link className={styles.question__list} key={question.id} to={`/question/${question.id}`}>
+        {module.questions.map(question => 
+          <Link
+            to={`/question/${module.id}/${question.id}`}
+            className={styles.question__list} 
+            key={question.id} 
+          >
             {question.question}
           </Link>
         )}

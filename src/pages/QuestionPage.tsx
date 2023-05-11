@@ -3,9 +3,10 @@ import { useParams } from 'react-router';
 
 import useGetObjectById from '../hooks/useGetObjectById';
 import CustomSyntaxHighlighter from '../common/CustomSyntaxHighlighter';
-import { modules } from '../../mock_db';
 
 import Header from '../components/Header/Header';
+
+import { modules } from '../../mock_db';
 
 import { styled } from '@mui/system';
 
@@ -23,7 +24,7 @@ const Description = styled('div')`
 
 const QuestionPage: FC = (): JSX.Element => {
   const param = useParams();
-  const item = useGetObjectById(modules, param.id as string);
+  const item = useGetObjectById(modules, param.moduleId as string, param.id as string);
 
   return (
     <>

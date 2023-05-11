@@ -5662,18 +5662,1309 @@ export default Button;`,
     questions: [
       {
         id: generateUUID(),
-        question: 'question 1',
-        descriptions: [],
+        question: 'Типи даних у JavaScript?',
+        descriptions: [
+          {
+            code: false,
+            label: `JavaScript має наступні типи даних:`,
+            description: ``,
+          },
+          {
+            code: false,
+            label: `1. Примітивні типи:`,
+            description: `• number: включає числа будь-якого типу (цілі, дробові, з плаваючою точкою).`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• string: текстові дані, які записуються у лапки ('' або "") або використанням шаблонних літералів (\`\`).`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• boolean: тип даних з двома значеннями true (істина) та false (хиба).`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• null: це спеціальне значення, яке вказує на відсутність будь-якого значення або посилання на об'єкт, який не існує.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• undefined: це спеціальне значення, яке вказує на те, що змінна не має значення або що вона не була ініціалізована.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• symbol: це унікальний тип даних, який використовується для створення унікальних ідентифікаторів.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• NaN: належить до примітивних типів даних і представляється значенням типу number. NaN використовується для позначення помилок, пов'язаних з операціями, які не повинні повертати значення, яке може бути використане для подальших обчислень.
+
+            Наприклад, якщо ми спробуємо здійснити математичну операцію зі значеннями, які не можуть бути обчислені, наприклад ділення на 0, то результатом буде NaN.
+            
+            Також, якщо ми спробуємо перетворити рядок на число, але рядок не може бути коректно перетворений, то результатом буде NaN.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• BigInt: є типом даних в JavaScript, який дозволяє зберігати цілі числа довільної величини, що перевищує максимальну точність, яку можна зберігати в типі даних number.
+
+            У JavaScript числа типу number зберігаються у форматі 64-бітових чисел з плаваючою комою, що обмежує їх максимальну точність до 15-16 десяткових знаків. Завдяки типу даних BigInt, ми можемо зберігати значення цілих чисел, що перевищують цей максимум.
+            
+            Для створення значень типу BigInt, ми можемо використовувати суфікс "n" після числа, яке потрібно перетворити на BigInt. `,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `const bigIntNumber = 1234567890123456789012345678901234567890n;`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Також, можна виконувати арифметичні операції зі значеннями типу BigInt, включаючи додавання, віднімання, множення та ділення.
+
+            На відміну від чисел типу number, значення типу BigInt не можуть бути порівняні зі значеннями інших типів даних, таких як рядки або числа. Для порівняння двох значень BigInt необхідно використовувати спеціальні методи, такі як BigInt.compare().`,
+          },
+          {
+            code: false,
+            label: `2. Об'єктні типи:`,
+            description: `• Object: це складний тип даних, що складається з набору властивостей (ключів) та їх значень. Об'єкти створюються за допомогою фігурних дужок {} або за допомогою конструктора Object().`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• Array: це об'єкт, що складається з упорядкованого набору значень. Масиви створюються за допомогою квадратних дужок [] або за допомогою конструктора Array().`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• Function: це об'єкт, який містить визначення функції. Функції можуть приймати параметри та повертати значення.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• Date: це об'єкт, який містить дату та час.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• RegExp: це об'єкт, який використовується для роботи з регулярними виразами.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ці типи даних можуть використовуватися окремо або в поєднанні для створення складних структур даних та об'єктів.`,
+          },
+        ],
       },
       {
         id: generateUUID(),
-        question: 'question 2',
-        descriptions: [],
+        question: 'Різниця між == і === (нестрога/строга рівність)?',
+        descriptions: [
+          {
+            code: false,
+            label: `Різниця між \`==\` і \`===\` (нестрога/строга рівність)?`,
+            description: `В JavaScript, \`==\` і \`===\` є операторами порівняння, які використовуються для порівняння значень.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `\`==\` (нестрога рівність) порівнює два операнди на рівність без урахування типу даних. Якщо типи даних різні, то JavaScript може спробувати конвертувати один з них до типу іншого операнда перед порівнянням. Наприклад:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            console.log(5 == "5"); // true, так як JavaScript конвертує рядок "5" до числа 5
+            console.log(true == 1); // true, так як true конвертується до числа 1
+            console.log(null == undefined); // true
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `\`===\` (строга рівність) порівнює два операнди на рівність з урахуванням типу даних. Якщо типи даних різні, то вони не рівні. Наприклад:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            console.log(5 === "5"); // false, так як типи даних різні (число та рядок)
+            console.log(true === 1); // false, так як типи даних різні (boolean та число)
+            console.log(null === undefined); // false, так як типи даних різні (null та undefined)
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `У загальному випадку, рекомендується використовувати \`===\` (строгу рівність), якщо ви хочете порівняти значення з урахуванням типу даних.`,
+          },
+        ],
       },
       {
         id: generateUUID(),
-        question: 'question 3',
-        descriptions: [],
+        question: 'Що таке Strict mode у JavaScript?',
+        descriptions: [
+          {
+            code: false,
+            label: `Що таке Strict mode у JavaScript?`,
+            description: `Strict mode (строгий режим) - це спеціальний режим роботи JavaScript, який дозволяє писати більш безпечний і ефективний код. У цьому режимі мова JavaScript застосовується у більш суворому варіанті, що дозволяє позбутися деяких характерних для JavaScript проблем.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Для включення строгого режиму у файлі скрипта або функції необхідно додати рядок "use strict"; на початку файлу або функції. Наприклад:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            "use strict";
+            function myFunction() {
+              // код функції в строгому режимі
+            }
+            `,
+          },
+          {
+            code: false,
+            label: `Основні відмінності між строгим і нестрогим режимами:`,
+            description: `1. Змінні та функції повинні бути оголошені перед використанням. В іншому випадку виникне помилка.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            "use strict";
+            x = 10; // помилка, змінна не оголошена
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `2. У строгому режимі не можна використовувати слова, які є зарезервованими для майбутніх версій JavaScript, наприклад, implements, interface, package, private, protected, public, static та інші.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `3. У строгому режимі eval має свої особливості. Він не може створювати змінні та функції в зовнішньому контексті.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `4. У строгому режимі не можна видаляти змінні, функції, аргументи та інші об'єкти. В іншому випадку виникне помилка.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `5. У строгому режимі не можна використовувати with. В іншому випадку виникне помилка.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `6. У строгому режимі не можна використовувати дублювання параметрів у функціях. В іншому випадку виникне помилка.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `7. У строгому режимі недопустимо використання delete для властивостей об'єктів, які не дозволяють видалення (наприклад, Object.preventExtensions()). В іншому випадку виникне помилка.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Різниця між function declaration і function expression?',
+        descriptions: [
+          {
+            code: false,
+            label: `Різниця між function declaration і function expression?`,
+            description: `У JavaScript існують два способи створення функцій: Function Declaration та Function Expression.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Function Declaration - це спосіб створення функції, який використовує ключове слово function, за яким слідує ім'я функції та її параметри. Функції, створені за допомогою Function Declaration, можуть бути викликані до того, як вони були оголошені.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            function multiply(a, b) {
+              return a * b;
+            }
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Function Expression - це спосіб створення функції, де функція присвоюється змінній як значення. Цей спосіб створення функцій потрібно закінчувати символом крапки з комою (;), оскільки це вираз. Функції, створені за допомогою Function Expression, не можуть бути викликані до того, як вони були оголошені.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const multiply = function(a, b) {
+              return a * b;
+            };
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Різниця між Function Declaration та Function Expression полягає в тому, як вони інтерпретуються. Function Declarations інтерпретуються двічі - спочатку, перед тим як будь-що буде виконано, а потім при зверненні до функції. Function Expressions інтерпретуються один раз - коли потрібно виконати код, що містить їх.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Різниця між null і undefined?',
+        descriptions: [
+          {
+            code: false,
+            label: `Різниця між null і undefined?`,
+            description: `У JavaScript, null і undefined є двома різними типами даних зі своїми відмінностями:`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• \`null\` - це значення, що вказує на те, що змінна не має жодного значення. Вона є спеціальним типом даних, що означає "відсутність значення". Якщо змінна має значення null, це означає, що вона пуста і нічого не містить.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• \`undefined\` - це значення, що вказує на те, що змінна не має присвоєного значення. Вона означає, що змінна не була ініціалізована. Якщо змінна має значення undefined, це означає, що вона була створена, але не була ініціалізована.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Різниця між ними полягає в тому, що null це присвоєне значення, яке вказує на відсутність чогось, а undefined - значення, яке використовується для змінних, які ще не були ініціалізовані, або для властивостей об'єкта, які не існують.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Проте, у більшості випадків null і undefined використовуються взаємозамінно і не мають великої різниці.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Типи таймерів у JavaScript?',
+        descriptions: [
+          {
+            code: false,
+            label: `Типи таймерів у JavaScript?`,
+            description: `У JavaScript існують три типи таймерів: setTimeout, setInterval і requestAnimationFrame.`,
+          },
+          {
+            code: false,
+            label: `setTimeout`,
+            description: `1. setTimeout: Цей таймер запускає функцію один раз через задану кількість мілісекунд. Синтаксис: setTimeout(function, delay).`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            setTimeout(function() {
+              console.log("Hello, world!");
+            }, 1000); //  Виконання функції через 1 секунду.
+            `,
+          },
+          {
+            code: false,
+            label: `setInterval`,
+            description: `2. setInterval: Цей таймер запускає функцію через задану кількість мілісекунд повторно. Синтаксис: setInterval(function, delay).`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            setInterval(function() {
+              console.log("Hello, world!");
+            }, 2000); //  Виконання функції кожні 2 секунди.
+            `,
+          },
+          {
+            code: false,
+            label: `requestAnimationFrame`,
+            description: `3. requestAnimationFrame: Цей таймер використовується для анімації та виклику функцій на кожному кадрі анімації. Він працює з частотою оновлення екрану (кадрів на секунду) та автоматично підлаштовується під швидкість браузера. Синтаксис: requestAnimationFrame(callback).`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            var element = document.getElementById("myElement");
+            var opacity = 1;
+
+            function animate() {
+              opacity -= 0.01;
+              element.style.opacity = opacity;
+              
+              if (opacity > 0) {
+                requestAnimationFrame(animate);
+              }
+            }
+
+            requestAnimationFrame(animate); //  Анімаційна функція, що змінює прозорість елемента на сторінці.
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ці таймери можуть бути корисними для виконання різноманітних функцій в JavaScript, таких як запуск анімації, автоматичне оновлення сторінки, періодичні операції тощо.приклади показують, як можна використовувати таймери у JavaScript для виконання різноманітних завдань, від простого виведення повідомлень до складних анімацій та інтерактивних ефектів на сторінці.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке підняття (Hoisting)?',
+        descriptions: [
+          {
+            code: false,
+            label: `Що таке підняття (Hoisting)?`,
+            description: `Hoisting - це механізм в JavaScript, що дозволяє використовувати змінні та функції, навіть якщо вони були оголошені пізніше в коді. Підняття відбувається в два етапи: підняття змінних (variable hoisting) та підняття функцій (function hoisting).`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Variable hoisting дозволяє оголошувати змінні з будь-яким значенням та використовувати їх у коді до їхньої фактичної ініціалізації. Під час підняття змінної, їй автоматично надається значення undefined. Однак, якщо змінна була вже оголошена з використанням let або const, її не можна використовувати до фактичної ініціалізації.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            console.log(x); // undefined
+            var x = 5;
+            console.log(x); // 5
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `У цьому прикладі змінна x піднімається вгору в область видимості, тому що вона оголошується за допомогою var. Тому, коли ми викликаємо console.log(x) перед оголошенням змінної x, ми отримуємо значення undefined.`,
+          },
+          {
+            code: false,
+            label: `Function hoisting`,
+            description: `Function hoisting дозволяє оголошувати функції та використовувати їх у коді до їхнього фактичного оголошення. Це означає, що функції можуть бути викликані до їхнього фактичного оголошення в коді. Однак, якщо функція була оголошена з використанням const або let, вона не може бути використана до їїнього фактичного оголошення.`,
+          },
+          {
+            code: true,
+            label: `function declaration`,
+            description: `
+            foo(); // "Hello, World!"
+
+            function foo() {
+              console.log("Hello, World!");
+            }
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `У цьому прикладі функція foo також піднімається вгору в область видимості, тому ми можемо її викликати перед її оголошенням.`,
+          },
+          {
+            code: false,
+            label: `function expression`,
+            description: `Проте, якщо ми оголошуємо функцію з використанням function expression, то піднімання (hoisting) не працює. Ось приклад:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            bar(); // TypeError: bar is not a function
+
+            var bar = function() {
+              console.log("Hello, World!");
+            };
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `У цьому прикладі змінна bar піднімається вгору в область видимості, але її значення залишається undefined до того моменту, поки їй не буде присвоєно функційне значення. Тому коли ми викликаємо bar() перед присвоєнням функційного значення, ми отримуємо помилку TypeError, оскільки bar не є функцією.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке область видимості (Scope)?',
+        descriptions: [
+          {
+            code: false,
+            label: `Що таке область видимості (Scope)?`,
+            description: `Область видимості (Scope) - це механізм в JavaScript, який визначає доступність змінних та інших ресурсів в певному місці коду.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `У JavaScript існує два типи областей видимості: глобальна та локальна.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Глобальна область видимості визначається за межами всіх функцій та блоків коду. Змінні, які визначені в глобальній області видимості, можуть бути доступні в усьому коді.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Локальна область видимості визначається всередині функцій та блоків коду. Змінні, які визначені в локальній області видимості, доступні лише всередині цієї області та не можуть бути доступні за її межами.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ось приклад коду, який ілюструє це поняття:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            var a = 10; // глобальна змінна
+
+            function foo() {
+              var b = 20; // локальна змінна, доступна лише всередині функції
+
+              console.log(a); // 10
+              console.log(b); // 20
+            }
+
+            foo();
+
+            console.log(a); // 10
+            console.log(b); // Uncaught ReferenceError: b is not defined
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `У цьому прикладі, змінна a визначена в глобальній області видимості, тому вона доступна в усьому коді. Змінна b визначена в локальній області видимості функції foo(), тому вона доступна лише всередині цієї функції, і за її межами вона не існує.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Різниця між var, let і const?',
+        descriptions: [
+          {
+            code: false,
+            label: `Різниця між var, let і const?`,
+            description: `У JavaScript є три ключових слова для оголошення змінних: var, let та const. Основна різниця між ними полягає в їх області видимості та можливості зміни значення.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ключове слово var було першим, яке з'явилось у JavaScript. Воно має глобальну або функціональну область видимості, що означає, що змінна, оголошена з використанням var, буде доступна будь-де у функції або за її межами, якщо вона оголошена поза функцією. Змінні, оголошені з використанням var, також мають підняття (hoisting), що означає, що їх можна використовувати перед тим, як вони були оголошені.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            console.log(x); // Виведе "undefined"
+            var x = 10;
+            console.log(x); // Виведе "10"
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ключове слово let було додане у ECMAScript 6. Воно також має блокову область видимості, що означає, що змінна, оголошена з використанням let, буде доступна тільки в межах блоку, у якому вона була оголошена (наприклад, у функції або циклі). Змінні, оголошені з використанням let, не мають підняття (hoisting), тому їх не можна використовувати перед їх оголошенням.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            console.log(x); // Виведе помилку "ReferenceError: x is not defined"
+            let x = 10;
+            console.log(x); // Виведе "10"
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ключове слово const також було додане у ECMAScript 6. Воно має таку ж блокову область видимості, як let, але змінні, оголошені з використанням const, не можна змінювати після їх ініціалізації.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке замикання (Closure)?',
+        descriptions: [
+          {
+            code: false,
+            label: `Що таке замикання (Closure)?`,
+            description: `Замикання (Closure) - це механізм мови JavaScript, який дозволяє функції звертатися до змінних з батьківського області видимості, навіть після того, як батьківська функція виконана. За допомогою замикання можна створювати приватні змінні і функції в JavaScript.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ось приклад замикання, де змінна counter не є глобальною, але доступна внутрішній функції incrementCounter, завдяки замиканню:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            function counterFunction() {
+              let counter = 0;
+            
+              function incrementCounter() {
+                counter++;
+                console.log(counter);
+              }
+            
+              return incrementCounter;
+            }
+            
+            const counter = counterFunction(); // повертає функцію incrementCounter
+            counter(); // 1
+            counter(); // 2
+            counter(); // 3
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `У цьому прикладі функція counterFunction повертає функцію incrementCounter, яка збільшує значення змінної counter та виводить його в консоль. Змінна counter є локальною змінною, що знаходиться в області видимості функції counterFunction. Кожен раз, коли функція counter викликається, вона збільшує значення змінної counter. Завдяки замиканню функції incrementCounter має доступ до змінної counter навіть після закінчення роботи функції counterFunction.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ось ще один приклад замикання, де створюється функція, яка повертає об'єкт з двома методами getName та setName для отримання та зміни імені:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            function person(name) {
+              return {
+                getName: function() {
+                  return name;
+                },
+                setName: function(newName) {
+                  name = newName;
+                }
+              }
+            }
+            
+            const john = person("John");
+            console.log(john.getName()); // "John"
+            john.setName("Jack");
+            console.log(john.getName()); // "Jack"
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `У цьому прикладі функція person приймає параметр name та повертає об\'єкт з двома методами getName та setName. Змінна name є локальною змінною, яка знаходиться в області видимості функції person`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що означає this у JavaScript?',
+        descriptions: [
+          {
+            code: false,
+            label: `Що означає this у JavaScript?`,
+            description: `Новачкам (і не тільки ним) буває важко розібратися з ключовим словом this. Існує 5 правил, що допоможуть вам зрозуміти принцип роботи this та не плутатися в майбутньому. Звісно, ці правила не покривають всі випадки, але вони працюють в більшості ситуацій.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `1. Значення this залежить від контексту виконання. Контекст — це те, як і де функцію викликають.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `2. При кожному виклику функції this може вказувати на різні об'єкти.`,
+          },
+          {
+            code: false,
+            label: `1. Глобальний об'єкт`,
+            description: `Давайте відразу перейдемо до практики. Відкрийте консоль (Windows: Ctrl + Shift + J)(Mac: Cmd + Option + J) і наберіть наступне:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `console.log(this); // Window {...}`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Так, об'єкт window. Це сталося тому що в глобальній області видимості this вказує на глобальний об'єкт, а для браузера це window.
+
+            Щоб краще зрозуміти чому так виходить, давайте трохи зануримося в теорію. Створіть нову змінну в консолі з вашим ім'ям.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `var myName = 'Petro';`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ми можемо отримати його значення, викликавши:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            myName
+            // 'Petro'`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `А чи знали ви, що всі змінні в глобальній області видимості прикріплені до об'єкта window?`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            window.myName
+            // 'Brandon'
+            window.myName === myName
+            // true`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Круто. Тепер ви знаєте трохи більше. А тепер давайте помістимо this всередину функції. Згідно з правилом вище, значення this залежить від способу виклику функції. Як думаєте, що поверне функція? Скопіюйте цей код в консоль браузера і перевірте свої здогадки:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            function test() {
+              return this;
+            }
+            test()`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `this все ще вказує на глобальний об'єкт. Це відбувається тому що this знаходиться не всередині оголошеного об'єкту, тому і посилається на глобальний об'єкт. Це може бути трохи складно зрозуміти, тому просто продовжуйте читати, далі. Також слід зауважити, що якщо ви використовуєте суворий режим ("use strict";), то в прикладі вище this буде вказувати на undefined.`,
+          },
+          {
+            code: false,
+            label: `2. Оголошений об'єкт`,
+            description: `Коли this використовується всередині оголошеного об'єкту, він приймає значення найближчого предка. Подивіться на код, де я оголошую об'єкт person і використовую this всередині методу full:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            var person = {
+              first: 'Andrii',
+              last: 'Kovalcuk',  
+              full: function() {
+                console.log(this.first + ' ' + this.last);
+              }
+            };
+            person.full();
+            // 'Andrii Kovalchuk'`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ви можете переконатися в тому, що this вказує на потрібний об'єкт, замінивши тіло методу full на console.log(this):`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            var person = {
+              first: 'Andrii',
+              last: 'Kovalcuk', 
+              full: function() {
+                console.log(this);
+              }
+            };
+            person.full();
+            // Object {first: "Andrii", last: "Kovalchuk", full: function}`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Перед тим, як рухатися далі, я хочу ще раз наголосити, що this вказує на найближчого предка. Уявіть випадок коли в вас будуть вкладені об'єкти:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            var person = {
+              first: 'Andrii',
+              last: 'Kovalchuk',
+              full: function() {
+                console.log(this.first + ' ' + this.last);
+              },
+              personTwo: {
+                first: 'Ivan',
+                last: 'Yarema',
+                full: function() {
+                  console.log(this.first + ' ' + this.last);
+                }
+              }
+            };`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Що станеться коли ми викличемо метод full? Ось що:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            person.full();
+            // 'Andrii Kovalchuk'
+            person.personTwo.full();
+            // 'Ivan Yarema'`,
+          },
+          {
+            code: false,
+            label: `3. Ключове слово new`,
+            description: `Коли використовується ключове слово new (конструктор), this вказує на новий об'єкт, що створюється.
+
+            Розглянемо приклад:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            function Car(make, model) {
+              this.make = make;
+              this.model = model;
+            };`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ви можете подумати, що this буде вказувати на глобальний об'єкт, і це буде правдою. Допоки ми не додамо ключове слово new! Тепер this буде вказувати на новий об'єкт, в даному випадку myCar.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            var myCar = new Car('Ford', 'Escape');
+            console.log(myCar);
+            // Car {make: "Ford", model: "Escape"}`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Щоб зрозуміти, чому так відбувається, вам потрібно знати як працює new, але це — вже тема для окремої статті. А зараз ви повинні пам'ятати, що якщо перед викликом стоїть new, то всередині this вказує на новий об'єкт.`,
+          },
+          {
+            code: false,
+            label: `4. call, bind, apply`,
+            description: `За допомогою цих функцій ми можемо явно вказати значення this. Ці три функції схожі між собою, але тим не менш мають суттєві відмінності в роботі.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `call та apply дуже схожі, вони обидва приймають значення this та аргументи, і викликають функцію з цими даними. Різниця лиш в тому, що call приймає аргументи окремо, а apply — в масиві.
+
+            Не розумієте? Давайте розглянемо на прикладі. Ми намагаємось додати числа, але це не працює:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            function add(c, d) {
+              console.log(this.a + this.b + c + d);
+            }
+            add(3,4);
+            // NaN`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Функція повертає NaN (not a number), адже this.a та this.b не існує, а неможливо додати те, чого немає.
+
+            Давайте створимо новий об'єкт і використаємо call та apply:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            function add(c, d) {
+              console.log(this.a + this.b + c + d);
+            }
+            var ten = {a: 1, b: 2};
+            add.call(ten, 3, 4);
+            // 10
+            add.apply(ten, [3,4]);
+            // 10`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Коли ми використовуємо call та apply, this прив'язується до значення першого аргументу і функція викликається з заданими параметрами.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `А як щодо bind? Параметри bind ідентичні до call, але bind не викликає функцію, натомість він повертає іншу функцію, в якій this вже привязано. Це корисно коли ви не ще не знаєте з якими параметрами будуть викликати вашу функцію.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            var small = {
+              a: 1,
+              go: function(b,c,d){
+                console.log(this.a+b+c+d);
+              }
+            }
+            var large = {
+              a: 100
+            }`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Скопіюйте цей код в консоль, а потім виконайте:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            small.go(2,3,4);
+            // 1+2+3+4 => 10`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Поки що нічого нового. А якщо ви хочемо викликати функцію, використавши large.a? Ви можемо використати call/apply:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            small.go.call(large,2,3,4);
+            // 100+2+3+4 => 109`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `А якщо ми не знаємо всі три параметри? Ми використовуємо bind.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `var bindTest = small.go.bind(large,2);`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Якщо ми виведемо нашу змінну, то побачимо, що це функція:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            console.log(bindTest);
+            // function (b,c,d){console.log(this.a+b+c+d);}`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Як ви пам'ятаєте, bind створює контекст виконання. Ми вже задали значення this та наш перший аргумент. Пізніше, коли ви дізналися всі параметри, ви можете викликати функцію, передавши лише два аргументи:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            bindTest(3,4);
+            // 100+2+3+4 => 109`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Для вашої зручності ось весь код одним блоком. Експерементуйте!`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            var small = {
+              a: 1,
+              go: function(b,c,d){
+                console.log(this.a+b+c+d);
+              }
+            }
+            var large = {
+              a: 100
+            }
+            small.go(2,3,4);
+            // 1+2+3+4 => 10
+            var bindTest = small.go.bind(large,2);
+            console.log(bindTest);
+            // function (b,c,d){console.log(this.a+b+c+d);}
+            bindTest(3,4);
+            // 100+2+3+4 => 109`,
+          },
+          {
+            code: false,
+            label: `5. Стрілочні функції`,
+            description: `стрілочні функції не змінюють this, вони беруть його з контексту.`,
+          },
+          {
+            code: false,
+            label: `Підсумки`,
+            description: `Тепер ви знаєте про JavaScript більше. Давайте підведемо короткий підсумок:`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `1. Значення this зазвичай залежить від контексту виконання.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `2. В глобальній області видимості this вказує на глобальний об'єкт (window)`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `3. Коли використовується ключове слово new, this вказує на об'єкт, що створюється.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `4. Ви можемо явно вказати значення this при виконанні функції за допомогою apply, call та bind..`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `5. Стрілочні функції не змінюють this.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Що таке функції вищого порядку (Higher Order Functions)?',
+        descriptions: [
+          {
+            code: false,
+            label: `Що таке функції вищого порядку (Higher Order Functions)?`,
+            description: `У JavaScript функції вищого порядку (Higher Order Functions) є функціями, які приймають іншу функцію як аргумент або повертають функцію як результат. Це дозволяє створювати більш абстрактний код, що може бути перевикористаний в різних контекстах.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ось декілька прикладів функцій вищого порядку у JavaScript:`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `1. map() - функція, яка створює новий масив, проходячи через кожен елемент масиву та застосовуючи до нього передану функцію.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const arr = [1, 2, 3, 4, 5];
+
+            const squared = arr.map(num => num * num);
+
+            console.log(squared); // [1, 4, 9, 16, 25]
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `2. filter() - функція, яка створює новий масив з елементів масиву, які проходять перевірку, здійснювану переданою функцією.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const arr = [1, 2, 3, 4, 5];
+
+            const evenNums = arr.filter(num => num % 2 === 0);
+
+            console.log(evenNums); // [2, 4]
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `3. reduce() - функція, яка обчислює один значення на основі елементів масиву, який проходить через нього, та переданої функції-акумулятора.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const arr = [1, 2, 3, 4, 5];
+
+            const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+            console.log(sum); // 15
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `4. setTimeout() - функція, яка встановлює затримку перед виконанням функції, яка передана як аргумент.`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            setTimeout(() => {
+              console.log('Hello, world!');
+            }, 2000);
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ці приклади демонструють, як функції можуть бути використані як аргументи і повертатись як результати, що дозволяє створювати більш абстрактний та перевикористовуваний код.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Як перетворити будь-який тип даних на булевий? Перелічіть хибні значення в JS?',
+        descriptions: [
+          {
+            code: false,
+            label: `Булеві інтерпретації js`,
+            description: `У JavaScript можна перетворити будь-який тип даних на булевий за допомогою конструктора Boolean() або застосувавши логічний оператор !!.`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Деякі типи даних, які можуть бути приведені до false, називаються "falsy" значеннями, інші, які завжди приводяться до true, називаються "truthy" значеннями.`,
+          },
+          {
+            code: false,
+            label: `Ось деякі приклади булевої інтерпретації в JavaScript:`,
+            description: ``,
+          },
+          {
+            code: false,
+            label: `Falsy значення:`,
+            description: `Falsy значення в JavaScript - це значення, які в інтерпретації являються false або перетворюються в false при конвертації до булевого типу. Ось перелік всіх falsy значень:`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• false`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• 0 (та інші числа рівні 0, наприклад, 0n, -0, 0.0, тощо)`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• '' (пустий рядок)`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• null`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• undefined`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• NaN`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Щоб видалити всі Falsy значення з масиву, можна використати метод filter(), який поверне новий масив з елементами, які є істинними:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const arr = [0, 1, '', 'hello', null, undefined, NaN];
+
+            const truthyArr = arr.filter(Boolean); // [1, 'hello']
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Також можна використати оператор !! для конвертації значення до булевого типу. Це дасть те саме результат, що й передача функції Boolean до методу filter():`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const truthyArr = arr.filter(x => !!x); // [1, 'hello']`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `У обох випадках результатом буде новий масив з істинними елементами, а всі Falsy значення будуть видалені.`,
+          },
+          {
+            code: false,
+            label: `Truthy значення:`,
+            description: `• true`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• Любе число, крім 0`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• Любий непорожній рядок, включаючи пробіли і символи`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• Любий об'єкт, включаючи масиви і функції`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `• Infinity і -Infinity`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ось деякі приклади булевої інтерпретації в JavaScript:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            console.log(Boolean(false));     // false
+            console.log(Boolean(0));         // false
+            console.log(Boolean(''));        // false
+            console.log(Boolean(null));      // false
+            console.log(Boolean(undefined)); // false
+            console.log(Boolean(NaN));       // false
+
+            console.log(Boolean(true));      // true
+            console.log(Boolean(1));         // true
+            console.log(Boolean('hello'));   // true
+            console.log(Boolean([]));        // true
+            console.log(Boolean({}));        // true
+            console.log(Boolean(Infinity));  // true
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Ці правила використовуються в умовних конструкціях, таких як if, while, for, switch, тому розуміння булевої інтерпретації є важливим для розуміння логіки програм.`,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Логічні оператори в JS',
+        descriptions: [
+          {
+            code: false,
+            label: `Логічні оператори в JS`,
+            description: `Логічні оператори - це оператори, які працюють з булевими значеннями та використовуються для виконання логічних операцій в JavaScript. Ось кілька прикладів:`,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `1. Оператор ?? - нульове злиття (nullish coalescing operator)
+            Оператор ?? використовується для повернення першого операнда, якщо він не є null або undefined, інакше повертається другий операнд. Наприклад:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const x = null;
+            const y = x ?? 'default';
+            console.log(y); // виведе 'default', оскільки x є null
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `2. Оператор && - Логічне І (logical AND)
+            Оператор && поверне перший операнд, якщо він є false, в іншому випадку поверне другий операнд. Цей оператор використовується для виконання логічного І між двома значеннями. Наприклад:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const x = 5;
+            const y = 10;
+            if (x > 0 && y > 0) {
+              console.log('Обидва значення є більші за 0');
+            }
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Оператор || - Логічне АБО (logical OR)
+            Оператор || поверне перший операнд, якщо він є true, в іншому випадку поверне другий операнд. Цей оператор використовується для виконання логічного АБО між двома значеннями. Наприклад:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const x = null;
+            const y = x || 'default';
+            console.log(y); // виведе 'default', оскільки x є null
+            `,
+          },
+          {
+            code: false,
+            label: ``,
+            description: `Оператор ! - Логічне НЕ (logical NOT)
+            Оператор ! поверне протилежне булеве значення операнду. Якщо операнд є true, то поверне false, якщо false, то поверне true. Наприклад:`,
+          },
+          {
+            code: true,
+            label: ``,
+            description: `
+            const x = true;
+            const y = !x;
+            console.log(y); // виведе false
+            `,
+          },
+        ],
+      },
+      {
+        id: generateUUID(),
+        question: 'Методи рядків у JavaScript?',
+        descriptions: [
+          {
+            code: false,
+            label: `Методи рядків у JavaScript?`,
+            description: ``,
+          },
+          {
+            code: false,
+            label: ``,
+            description: ``,
+          },
+          {
+            code: false,
+            label: ``,
+            description: ``,
+          },
+          {
+            code: false,
+            label: ``,
+            description: ``,
+          },
+        ],
       },
     ],
   },
