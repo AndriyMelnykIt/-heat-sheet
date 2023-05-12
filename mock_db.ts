@@ -8180,18 +8180,34 @@ let y: unknown = "hello";
     questions: [
       {
         id: generateUUID(),
-        question: 'question 1',
-        descriptions: [],
+        question: 'Eslint',
+        descriptions: [
+          {
+            code: false,
+            label: 'Eslint, як його використовувати у проектах',
+            description: `https://dev.ua/blogs/posts/sinevych`,
+          },
+          {
+            code: false,
+            label: 'Основи Eslint',
+            description: `https://www.youtube.com/watch?v=Q794gDZcY6E`,
+          }
+        ],
       },
       {
         id: generateUUID(),
-        question: 'question 2',
-        descriptions: [],
-      },
-      {
-        id: generateUUID(),
-        question: 'question 3',
-        descriptions: [],
+        question: 'Prettier',
+        descriptions: [
+          {
+            code: false,
+            label: 'Prettier, як його використовувати у проектах',
+            description: `https://www.digitalocean.com/community/tutorials/how-to-format-code-with-prettier-in-visual-studio-code-ru`,
+          },{
+            code: false,
+            label: 'Prettier, як його використовувати у проектах',
+            description: `https://www.youtube.com/watch?v=Cj9cCoIUb-w`,
+          }
+        ],
       },
     ],
   },
