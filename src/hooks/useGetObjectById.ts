@@ -8,8 +8,6 @@ const useGetObjectById = ( array: (Question | Module)[], moduleId : string ,id :
     getObjectById(array, moduleId, id);
   }, [array, moduleId, id]);
 
-  console.log('useGetObjectById')
-debugger
   const getObjectById = (array: (Question | Module)[], moduleIdForSearch: string, idForSearch: string): void => {
     for (let i = 0; i < array.length; i++) {
       const obj = array[i];
