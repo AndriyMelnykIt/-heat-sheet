@@ -8217,8 +8217,12 @@ let y: unknown = "hello";
     questions: [
       {
         id: generateUUID(),
-        question: 'question 1',
-        descriptions: [],
+        question: 'Що таке реакт?',
+        descriptions: [{
+          code: false,
+          label: 'React',
+          description: `React — відкрита JavaScript бібліотека для створення інтерфейсів користувача, яка покликана вирішувати проблеми часткового оновлення вмісту вебсторінки, з якими стикаються в розробці односторінкових застосунків.`,
+        }],
       },
       {
         id: generateUUID(),
