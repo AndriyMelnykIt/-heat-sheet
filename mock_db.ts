@@ -8154,7 +8154,7 @@ let y: unknown = "hello";
             code: false,
             label: 'Part 1',
             description: `https://codeguida.com/post/454`,
-          },{
+          }, {
             code: false,
             label: 'Part 2',
             description: `https://codeguida.com/post/688`,
@@ -8191,7 +8191,7 @@ let y: unknown = "hello";
             code: false,
             label: 'Основи Eslint',
             description: `https://www.youtube.com/watch?v=Q794gDZcY6E`,
-          }
+          },
         ],
       },
       {
@@ -8202,11 +8202,11 @@ let y: unknown = "hello";
             code: false,
             label: 'Prettier, як його використовувати у проектах',
             description: `https://www.digitalocean.com/community/tutorials/how-to-format-code-with-prettier-in-visual-studio-code-ru`,
-          },{
+          }, {
             code: false,
             label: 'Prettier, як його використовувати у проектах',
             description: `https://www.youtube.com/watch?v=Cj9cCoIUb-w`,
-          }
+          },
         ],
       },
     ],
@@ -8218,21 +8218,103 @@ let y: unknown = "hello";
       {
         id: generateUUID(),
         question: 'Що таке реакт?',
-        descriptions: [{
-          code: false,
-          label: 'React',
-          description: `React — відкрита JavaScript бібліотека для створення інтерфейсів користувача, яка покликана вирішувати проблеми часткового оновлення вмісту вебсторінки, з якими стикаються в розробці односторінкових застосунків.`,
-        }],
+        descriptions: [
+          {
+            code: false,
+            label: 'React',
+            description: `React — відкрита JavaScript бібліотека для створення інтерфейсів користувача, яка покликана вирішувати проблеми часткового оновлення вмісту вебсторінки, з якими стикаються в розробці односторінкових застосунків.`,
+          },
+        ],
       },
       {
         id: generateUUID(),
-        question: 'question 2',
-        descriptions: [],
+        question: 'Особливості React',
+        descriptions: [
+          {
+            code: false,
+            label: 'Які особливості має react',
+            description: `1. Компонентний підхід: React розбиває користувацький інтерфейс на невеликі та незалежні компоненти, які можуть бути повторно використані.`,
+          },{
+            code: false,
+            label: '',
+            description: `2. Віртуальний DOM: React використовує віртуальний DOM для оптимізації оновлення інтерфейсу. Зміни відбуваються спочатку у віртуальному DOM, а потім ефективно оновлюються на сторінці.`,
+          },{
+            code: false,
+            label: '',
+            description: `3. Одностороннє зв'язування даних: React пропагує дані у одному напрямку, що полегшує відслідковування та управління станом даних.`,
+          },{
+            code: false,
+            label: '',
+            description: `JSX: React використовує спеціальну синтаксичну конструкцію JSX, яка дозволяє вписувати HTML-подібний код безпосередньо в JavaScript.`,
+          },{
+            code: false,
+            label: '',
+            description: `Реактивність: React забезпечує швидке реагування на зміни даних та автоматично оновлює відповідні частини інтерфейсу.`,
+          },
+        ],
       },
       {
+        id: generateUUID(),
+        question: 'Що таке Virtual DOM? Як він працює з React?',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: `Віртуальний DOM (VDOM) - це концепція, що використовується в React для оптимізації оновлення інтерфейсу користувача.`,
+          },{
+            code: false,
+            label: '',
+            description: `У React, замість безпосередньої маніпуляції реальним DOM, створюється віртуальне представлення (віртуальний DOM) всього інтерфейсу. Це структура даних, яка відображає реальний стан DOM-дерева. Коли відбуваються зміни в стані даних, React порівнює нове віртуальне DOM з попереднім станом.`,
+          },{
+            code: false,
+            label: '',
+            description: `React аналізує різницю між попереднім та новим віртуальним DOM і ефективно оновлює тільки ті частини реального DOM, які потребують змін. Цей процес називається "поновленням віртуального DOM". Порівняння та оновлення робляться за допомогою алгоритмів порівняння ключів та визначення різниці між елементами.`,
+          },{
+            code: false,
+            label: '',
+            description: `Використання віртуального DOM дозволяє React оптимізувати процес оновлення інтерфейсу та зменшити кількість безпосередніх маніпуляцій з реальним DOM. Це призводить до покращеної продуктивності та швидшої відповіді на зміни в даних.`,
+          },
+        ],
+      }, {
         id: generateUUID(),
         question: 'question 3',
-        descriptions: [],
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      }, {
+        id: generateUUID(),
+        question: 'question 3',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      }, {
+        id: generateUUID(),
+        question: 'question 3',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
+      }, {
+        id: generateUUID(),
+        question: 'question 3',
+        descriptions: [
+          {
+            code: false,
+            label: '',
+            description: ``,
+          },
+        ],
       },
     ],
   },
