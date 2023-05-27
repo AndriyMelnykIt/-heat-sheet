@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import useGetObjectById from '../hooks/useGetObjectById';
+import { isUrl } from '../services/isUrl';
 import CustomSyntaxHighlighter from '../common/CustomSyntaxHighlighter';
 
 import Header from '../components/Header/Header';
@@ -15,12 +17,12 @@ const BasicLabel = styled('div')`
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
-`
+`;
 
 const Description = styled('div')`
   font-size: 16px;
   line-height: 1.5;
-`
+`;
 
 const QuestionPage: FC = (): JSX.Element => {
   const param = useParams();
@@ -28,7 +30,7 @@ const QuestionPage: FC = (): JSX.Element => {
 
   return (
     <>
-      <Header />
+      <Header/>
       {!!item && item.descriptions.length !== 0 ? (
         <>
           {item.descriptions.map((el, idx) => {
@@ -36,7 +38,7 @@ const QuestionPage: FC = (): JSX.Element => {
               return (
                 <div key={idx}>
                   <BasicLabel>{el.label}</BasicLabel>
-                  <CustomSyntaxHighlighter codeString={el.description} />
+                  <CustomSyntaxHighlighter codeString={el.description}/>
                 </div>
               );
             }
@@ -44,7 +46,9 @@ const QuestionPage: FC = (): JSX.Element => {
             return (
               <div key={idx}>
                 <BasicLabel>{el.label}</BasicLabel>
-                <Description>{el.description}</Description>
+                {isUrl(el.description) ? <Link to={el.description}>{el.description}</Link>
+                  :
+                  <Description>{el.description}</Description>}
               </div>
             );
           })}
